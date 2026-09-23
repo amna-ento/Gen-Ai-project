@@ -1,0 +1,20 @@
+# Local planning
+project_plan.md
+
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+
+# Generated/local data
+data/
+logs/
