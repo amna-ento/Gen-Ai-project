@@ -1,3 +1,4 @@
+
 import argparse
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -94,6 +95,7 @@ def main():
     output_path = (
         Path("data")
         / "meetings"
+        / "valid_input"
         / args.output_meeting_id
         / "reference"
         / "reference.txt"
