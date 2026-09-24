@@ -18,4 +18,4 @@ __pycache__/
 
 # Generated/local data
 data/
-logs/
+logs/.env
