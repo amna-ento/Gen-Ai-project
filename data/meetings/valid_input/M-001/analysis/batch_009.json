@@ -1,0 +1,80 @@
+{
+  "topics": [
+    {
+      "topic": "TV program pre-filter feature",
+      "source_segments": [
+        217,
+        218,
+        219,
+        220,
+        221,
+        222
+      ]
+    },
+    {
+      "topic": "Production cost breakdown",
+      "source_segments": [
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "positive",
+      "source_segments": [
+        217,
+        218,
+        219,
+        220,
+        221
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        231,
+        232,
+        233,
+        234,
+        235
+      ]
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "label": "neutral",
+      "source_segments": [
+        227,
+        228,
+        229,
+        230,
+        232
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

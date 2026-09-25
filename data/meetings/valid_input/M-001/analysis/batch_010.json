@@ -1,0 +1,73 @@
+{
+  "topics": [
+    {
+      "topic": "Product cost and functionalities",
+      "source_segments": [
+        244,
+        245,
+        246
+      ]
+    },
+    {
+      "topic": "Public demand and product features",
+      "source_segments": [
+        250,
+        251,
+        252,
+        253,
+        254
+      ]
+    },
+    {
+      "topic": "Marketing evaluation criteria",
+      "source_segments": [
+        258,
+        259
+      ]
+    },
+    {
+      "topic": "User preferences and design",
+      "source_segments": [
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        250,
+        251,
+        252,
+        253,
+        254
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "positive",
+      "source_segments": [
+        266,
+        267,
+        268,
+        269
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

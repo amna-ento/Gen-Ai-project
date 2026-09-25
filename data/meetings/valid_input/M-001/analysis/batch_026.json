@@ -1,0 +1,29 @@
+{
+  "topics": [
+    {
+      "topic": "Coffee machine",
+      "source_segments": [
+        676,
+        677
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_01",
+      "label": "positive",
+      "source_segments": [
+        676
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        678
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

@@ -1,0 +1,90 @@
+
+{
+  "meeting_id": "M-001",
+  "questions": [
+    {
+      "question_id": "Q001",
+      "question": "What is the meeting about?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_001",
+        "M-001_CHUNK_002",
+        "M-001_CHUNK_012"
+      ]
+    },
+    {
+      "question_id": "Q002",
+      "question": "What prototypes were developed?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_001",
+        "M-001_CHUNK_002"
+      ]
+    },
+    {
+      "question_id": "Q003",
+      "question": "What are the design requirements for the product?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_012",
+        "M-001_CHUNK_014",
+        "M-001_CHUNK_015"
+      ]
+    },
+    {
+      "question_id": "Q004",
+      "question": "What was discussed about the LCD?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_001",
+        "M-001_CHUNK_014",
+        "M-001_CHUNK_015",
+        "M-001_CHUNK_016",
+        "M-001_CHUNK_019"
+      ]
+    },
+    {
+      "question_id": "Q005",
+      "question": "What makes the product innovative?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_012",
+        "M-001_CHUNK_015",
+        "M-001_CHUNK_016"
+      ]
+    },
+    {
+      "question_id": "Q006",
+      "question": "What was discussed about making the product easy to use?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_012",
+        "M-001_CHUNK_019"
+      ]
+    },
+    {
+      "question_id": "Q007",
+      "question": "What was discussed about production costs?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_021"
+      ]
+    },
+    {
+      "question_id": "Q008",
+      "question": "What was discussed about user customization?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_019",
+        "M-001_CHUNK_021"
+      ]
+    },
+    {
+      "question_id": "Q009",
+      "question": "What ideas were suggested to make the presentation more interesting?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_024",
+        "M-001_CHUNK_025"
+      ]
+    },
+    {
+      "question_id": "Q010",
+      "question": "What were the final outcomes of the meeting?",
+      "relevant_chunk_ids": [
+        "M-001_CHUNK_025"
+      ]
+    }
+  ]
+}

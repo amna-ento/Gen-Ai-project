@@ -1,0 +1,27 @@
+{
+  "meeting_id": "M-001",
+  "total_source_segments": 680,
+  "total_chunks": 25,
+  "coverage": {
+    "expected_segments": 680,
+    "covered_segments": 680,
+    "missing_segments": 0,
+    "duplicate_segments": 0,
+    "missing_segment_ids": [],
+    "duplicate_segment_ids": []
+  },
+  "order_check": {
+    "correct_order": true
+  },
+  "chunk_size": {
+    "target_words": 160,
+    "max_words": 220,
+    "max_duration_seconds": 90,
+    "average_words": 156.16,
+    "minimum_words": 72,
+    "maximum_words": 176,
+    "average_duration_seconds": 77.48,
+    "oversized_chunks": [],
+    "long_chunks": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "meeting_id": "M-001",
+  "index_type": "HNSW",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "dimension": 384,
+  "vector_count": 25,
+  "distance": "cosine",
+  "parameters": {
+    "M": 16,
+    "ef_construction": 200,
+    "ef_search": 50,
+    "seed": 42
+  },
+  "chunk_ids": [
+    "M-001_CHUNK_001",
+    "M-001_CHUNK_002",
+    "M-001_CHUNK_003",
+    "M-001_CHUNK_004",
+    "M-001_CHUNK_005",
+    "M-001_CHUNK_006",
+    "M-001_CHUNK_007",
+    "M-001_CHUNK_008",
+    "M-001_CHUNK_009",
+    "M-001_CHUNK_010",
+    "M-001_CHUNK_011",
+    "M-001_CHUNK_012",
+    "M-001_CHUNK_013",
+    "M-001_CHUNK_014",
+    "M-001_CHUNK_015",
+    "M-001_CHUNK_016",
+    "M-001_CHUNK_017",
+    "M-001_CHUNK_018",
+    "M-001_CHUNK_019",
+    "M-001_CHUNK_020",
+    "M-001_CHUNK_021",
+    "M-001_CHUNK_022",
+    "M-001_CHUNK_023",
+    "M-001_CHUNK_024",
+    "M-001_CHUNK_025"
+  ]
+}

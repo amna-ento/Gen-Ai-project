@@ -1,0 +1,64 @@
+{
+  "topics": [
+    {
+      "topic": "Technological innovation in remote control",
+      "source_segments": [
+        272,
+        273,
+        279,
+        280
+      ]
+    },
+    {
+      "topic": "Customization of remote control shapes",
+      "source_segments": [
+        287,
+        290,
+        293,
+        294
+      ]
+    },
+    {
+      "topic": "Material preferences for remote control",
+      "source_segments": [
+        296,
+        297,
+        298,
+        299
+      ]
+    },
+    {
+      "topic": "Fashion trends and remote control design",
+      "source_segments": [
+        283,
+        284,
+        285,
+        286
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_01",
+      "label": "positive",
+      "source_segments": [
+        273,
+        283,
+        293,
+        294
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        275,
+        276,
+        277,
+        278
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

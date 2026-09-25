@@ -1,0 +1,13 @@
+{
+  "meeting_id": "M-002",
+  "audio": {
+    "filename": "raw.wav",
+    "path": "data/meetings/valid_input/M-002/audio/raw.wav",
+    "duration": 5.9431746031746036,
+    "sample_rate": 44100,
+    "channels": 2
+  },
+  "language": "en",
+  "language_probability": 0.3928,
+  "segments": []
+}

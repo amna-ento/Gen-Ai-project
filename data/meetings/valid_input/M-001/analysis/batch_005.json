@@ -1,0 +1,74 @@
+{
+  "topics": [
+    {
+      "topic": "LCD version vs. alternative version",
+      "source_segments": [
+        110,
+        112
+      ]
+    },
+    {
+      "topic": "Button durability and design",
+      "source_segments": [
+        113,
+        126
+      ]
+    },
+    {
+      "topic": "Button configuration and cost",
+      "source_segments": [
+        124,
+        128
+      ]
+    },
+    {
+      "topic": "Missing charger button feature",
+      "source_segments": [
+        130,
+        132
+      ]
+    },
+    {
+      "topic": "Speech recognition system integration",
+      "source_segments": [
+        134,
+        137
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        110,
+        112
+      ]
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "label": "negative",
+      "source_segments": [
+        113
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "positive",
+      "source_segments": [
+        126,
+        128
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "negative",
+      "source_segments": [
+        130,
+        132
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

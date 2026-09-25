@@ -1,0 +1,33 @@
+{
+  "meeting_id": "M-001",
+  "total_chunks": 25,
+  "metadata_quality": {
+    "meeting_id": {
+      "errors": 0,
+      "passed": true
+    },
+    "speakers": {
+      "errors": 0,
+      "passed": true
+    },
+    "timestamps": {
+      "errors": 0,
+      "passed": true
+    },
+    "topics": {
+      "errors": 0,
+      "passed": true
+    },
+    "sentiment": {
+      "errors": 0,
+      "passed": true
+    }
+  },
+  "errors": {
+    "meeting_id": [],
+    "speakers": [],
+    "timestamps": [],
+    "topics": [],
+    "sentiment": []
+  }
+}

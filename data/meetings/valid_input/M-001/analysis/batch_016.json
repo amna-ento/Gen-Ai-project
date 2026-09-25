@@ -1,0 +1,116 @@
+{
+  "topics": [
+    {
+      "topic": "LCD vs TV display",
+      "source_segments": [
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413
+      ]
+    },
+    {
+      "topic": "User preferences for LCD",
+      "source_segments": [
+        414,
+        415,
+        416,
+        417,
+        418
+      ]
+    },
+    {
+      "topic": "Ease of use for LCD and TV",
+      "source_segments": [
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429
+      ]
+    },
+    {
+      "topic": "Cost implications of LCD",
+      "source_segments": [
+        431,
+        432,
+        433,
+        434
+      ]
+    },
+    {
+      "topic": "Recommendation for product design",
+      "source_segments": [
+        435
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        414,
+        415,
+        416,
+        417,
+        418
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        406,
+        407,
+        408,
+        409,
+        410
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "positive",
+      "source_segments": [
+        423,
+        424,
+        425,
+        426,
+        427
+      ]
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "label": "negative",
+      "source_segments": [
+        431,
+        432,
+        433,
+        434
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Provide LCD to users who opt for it",
+      "made_by": [
+        "SPEAKER_00"
+      ],
+      "source_segments": [
+        417,
+        418
+      ]
+    }
+  ],
+  "action_items": []
+}

@@ -1,0 +1,72 @@
+{
+  "meeting_id": "M-001",
+  "source_chunks": 25,
+  "chunk_validation": {
+    "total_chunks": 25,
+    "missing_metadata": 0,
+    "duplicate_chunk_ids": 0,
+    "empty_text": 0
+  },
+  "models": [
+    {
+      "model_name": "bge_small",
+      "model_path": "BAAI/bge-small-en-v1.5",
+      "embedding_validation": {
+        "expected_vectors": 25,
+        "actual_vectors": 25,
+        "dimension": 384,
+        "missing_vectors": 0,
+        "invalid_values": 0,
+        "zero_vectors": 0,
+        "min_norm": 0.9999999403953552,
+        "max_norm": 1.0000001192092896,
+        "mean_norm": 1.0
+      },
+      "metadata_count": 25,
+      "generation_time_seconds": 0.524545,
+      "embedding_file_size_bytes": 38528,
+      "embedding_file_size_kb": 37.62,
+      "embedding_file_size_mb": 0.0367
+    },
+    {
+      "model_name": "bge_base",
+      "model_path": "BAAI/bge-base-en-v1.5",
+      "embedding_validation": {
+        "expected_vectors": 25,
+        "actual_vectors": 25,
+        "dimension": 768,
+        "missing_vectors": 0,
+        "invalid_values": 0,
+        "zero_vectors": 0,
+        "min_norm": 0.9999999403953552,
+        "max_norm": 1.0,
+        "mean_norm": 1.0
+      },
+      "metadata_count": 25,
+      "generation_time_seconds": 0.478633,
+      "embedding_file_size_bytes": 76928,
+      "embedding_file_size_kb": 75.12,
+      "embedding_file_size_mb": 0.0734
+    },
+    {
+      "model_name": "qwen3_0.6b",
+      "model_path": "Qwen/Qwen3-Embedding-0.6B",
+      "embedding_validation": {
+        "expected_vectors": 25,
+        "actual_vectors": 25,
+        "dimension": 1024,
+        "missing_vectors": 0,
+        "invalid_values": 0,
+        "zero_vectors": 0,
+        "min_norm": 0.9981099963188171,
+        "max_norm": 1.0036048889160156,
+        "mean_norm": 0.9999025464057922
+      },
+      "metadata_count": 25,
+      "generation_time_seconds": 6.220447,
+      "embedding_file_size_bytes": 102528,
+      "embedding_file_size_kb": 100.12,
+      "embedding_file_size_mb": 0.0978
+    }
+  ]
+}

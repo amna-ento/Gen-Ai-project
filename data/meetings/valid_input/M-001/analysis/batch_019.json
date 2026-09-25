@@ -1,0 +1,86 @@
+{
+  "topics": [
+    {
+      "topic": "Parental control module integration",
+      "source_segments": [
+        487,
+        488,
+        489,
+        490,
+        491,
+        492,
+        493,
+        494,
+        495,
+        496,
+        497,
+        498,
+        499,
+        500,
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507,
+        508,
+        509,
+        510,
+        511,
+        512,
+        513,
+        514,
+        515,
+        516
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_03",
+      "label": "neutral",
+      "source_segments": [
+        491,
+        492,
+        493,
+        494,
+        495
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        496,
+        497,
+        498,
+        499,
+        502
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "negative",
+      "source_segments": [
+        504,
+        505,
+        506,
+        507,
+        508
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Parental control module will be optional",
+      "made_by": [
+        "SPEAKER_00"
+      ],
+      "source_segments": [
+        516
+      ]
+    }
+  ],
+  "action_items": []
+}

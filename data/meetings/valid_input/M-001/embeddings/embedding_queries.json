@@ -1,0 +1,81 @@
+[
+  {
+    "query_id": "Q001",
+    "query": "What is the cost of the prototype?",
+    "expected_chunk_ids": ["M-001_CHUNK_003"]
+  },
+  {
+    "query_id": "Q002",
+    "query": "What are the two versions of the prototype?",
+    "expected_chunk_ids": ["M-001_CHUNK_001"]
+  },
+  {
+    "query_id": "Q003",
+    "query": "Why was the LCD considered optional?",
+    "expected_chunk_ids": [
+      "M-001_CHUNK_001",
+      "M-001_CHUNK_018",
+      "M-001_CHUNK_019"
+    ]
+  },
+  {
+    "query_id": "Q004",
+    "query": "Where is the microphone placed on the remote control?",
+    "expected_chunk_ids": [
+      "M-001_CHUNK_002",
+      "M-001_CHUNK_003"
+    ]
+  },
+  {
+    "query_id": "Q005",
+    "query": "How does the navigation control work?",
+    "expected_chunk_ids": [
+      "M-001_CHUNK_002",
+      "M-001_CHUNK_004"
+    ]
+  },
+  {
+    "query_id": "Q006",
+    "query": "What does the switch on the remote control do?",
+    "expected_chunk_ids": [
+      "M-001_CHUNK_002",
+      "M-001_CHUNK_003"
+    ]
+  },
+  {
+    "query_id": "Q007",
+    "query": "What improvements could reduce the production cost?",
+    "expected_chunk_ids": [
+      "M-001_CHUNK_003",
+      "M-001_CHUNK_005",
+      "M-001_CHUNK_006",
+      "M-001_CHUNK_007",
+      "M-001_CHUNK_010",
+      "M-001_CHUNK_018",
+      "M-001_CHUNK_019"
+    ]
+  },
+  {
+    "query_id": "Q008",
+    "query": "What accessories come with the remote control?",
+    "expected_chunk_ids": [
+      "M-001_CHUNK_001",
+      "M-001_CHUNK_003"
+    ]
+  },
+  {
+    "query_id": "Q009",
+    "query": "What type of microphone is used?",
+    "expected_chunk_ids": ["M-001_CHUNK_002"]
+  },
+  {
+    "query_id": "Q010",
+    "query": "What is the purpose of the parental control module?",
+    "expected_chunk_ids": [
+      "M-001_CHUNK_002",
+      "M-001_CHUNK_008",
+      "M-001_CHUNK_018",
+      "M-001_CHUNK_020"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "model_name": "bge_small",
+  "model_path": "BAAI/bge-small-en-v1.5",
+  "embedding_validation": {
+    "expected_vectors": 25,
+    "actual_vectors": 25,
+    "dimension": 384,
+    "missing_vectors": 0,
+    "invalid_values": 0,
+    "zero_vectors": 0,
+    "min_norm": 0.9999999403953552,
+    "max_norm": 1.0000001192092896,
+    "mean_norm": 1.0
+  },
+  "metadata_count": 25,
+  "generation_time_seconds": 0.524545,
+  "embedding_file_size_bytes": 38528,
+  "embedding_file_size_kb": 37.62,
+  "embedding_file_size_mb": 0.0367
+}

@@ -1,0 +1,537 @@
+[
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_001",
+    "speakers": [
+      "SPEAKER_03",
+      "SPEAKER_00"
+    ],
+    "start_time": 49.78,
+    "end_time": 138.22,
+    "topic": [
+      "Prototype preparation",
+      "Prototype design discussion"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_00",
+        "label": "neutral"
+      }
+    ],
+    "word_count": 118,
+    "segment_count": 15
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_002",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_02",
+      "SPEAKER_01"
+    ],
+    "start_time": 138.22,
+    "end_time": 223.46,
+    "topic": [
+      "Prototype design discussion",
+      "Prototype presentation",
+      "Microphone placement"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_02",
+        "label": "neutral"
+      }
+    ],
+    "word_count": 141,
+    "segment_count": 20
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_003",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_03",
+      "SPEAKER_00",
+      "SPEAKER_01"
+    ],
+    "start_time": 223.46,
+    "end_time": 308.46,
+    "topic": [
+      "Microphone placement",
+      "Cost of the prototype",
+      "Battery usage",
+      "Battery type and usage"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_01",
+        "label": "neutral"
+      }
+    ],
+    "word_count": 163,
+    "segment_count": 31
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_004",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_02"
+    ],
+    "start_time": 308.46,
+    "end_time": 375.46,
+    "topic": [
+      "Battery type and usage",
+      "Remote control setup",
+      "Button functionality explanation"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_01",
+        "label": "neutral"
+      }
+    ],
+    "word_count": 160,
+    "segment_count": 36
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_005",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_03",
+      "SPEAKER_02"
+    ],
+    "start_time": 375.46,
+    "end_time": 447.46,
+    "topic": [
+      "Button functionality explanation",
+      "LCD display on remote",
+      "LCD version vs. alternative version",
+      "Button durability and design",
+      "Button configuration and cost"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_03",
+        "label": "negative"
+      }
+    ],
+    "word_count": 161,
+    "segment_count": 24
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_006",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_03",
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 447.46,
+    "end_time": 526.46,
+    "topic": [
+      "Button configuration and cost",
+      "Missing charger button feature",
+      "Speech recognition system integration",
+      "charger and pricing"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_03",
+        "label": "negative"
+      }
+    ],
+    "word_count": 172,
+    "segment_count": 24
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_007",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_03",
+      "SPEAKER_00"
+    ],
+    "start_time": 526.46,
+    "end_time": 594.46,
+    "topic": [
+      "charger and pricing",
+      "modular design and functionality",
+      "Product Features"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_03",
+        "label": "negative"
+      }
+    ],
+    "word_count": 164,
+    "segment_count": 22
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_008",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_00"
+    ],
+    "start_time": 594.46,
+    "end_time": 677.46,
+    "topic": [
+      "Product Features"
+    ],
+    "sentiment": [],
+    "word_count": 163,
+    "segment_count": 18
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_009",
+    "speakers": [
+      "SPEAKER_00"
+    ],
+    "start_time": 677.46,
+    "end_time": 749.46,
+    "topic": [
+      "Product Features"
+    ],
+    "sentiment": [],
+    "word_count": 163,
+    "segment_count": 24
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_010",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_03",
+      "SPEAKER_02"
+    ],
+    "start_time": 749.46,
+    "end_time": 839.46,
+    "topic": [
+      "Product Features",
+      "TV program pre-filter feature",
+      "Production cost breakdown"
+    ],
+    "sentiment": [],
+    "word_count": 158,
+    "segment_count": 25
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_011",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_01",
+      "SPEAKER_03"
+    ],
+    "start_time": 839.46,
+    "end_time": 927.01,
+    "topic": [
+      "Production cost breakdown",
+      "Product cost and functionalities",
+      "Public demand and product features",
+      "Marketing evaluation criteria",
+      "User preferences and design"
+    ],
+    "sentiment": [],
+    "word_count": 153,
+    "segment_count": 25
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_012",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_02"
+    ],
+    "start_time": 927.01,
+    "end_time": 999.01,
+    "topic": [
+      "User preferences and design",
+      "Technological innovation in remote control",
+      "Fashion trends and remote control design",
+      "Customization of remote control shapes"
+    ],
+    "sentiment": [],
+    "word_count": 161,
+    "segment_count": 27
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_013",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 999.01,
+    "end_time": 1087.62,
+    "topic": [
+      "Customization of remote control shapes",
+      "Material preferences for remote control",
+      "Material selection for remote",
+      "Evaluation criteria for remote",
+      "Evaluation method for remote"
+    ],
+    "sentiment": [],
+    "word_count": 171,
+    "segment_count": 29
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_014",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00",
+      "SPEAKER_02"
+    ],
+    "start_time": 1087.62,
+    "end_time": 1169.62,
+    "topic": [
+      "Evaluation criteria for remote",
+      "Evaluation method for remote",
+      "Product evaluation"
+    ],
+    "sentiment": [],
+    "word_count": 162,
+    "segment_count": 30
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_015",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_02"
+    ],
+    "start_time": 1169.62,
+    "end_time": 1257.62,
+    "topic": [
+      "Product evaluation",
+      "LCD vs. no LCD",
+      "Innovation of the prototype",
+      "Product innovation assessment"
+    ],
+    "sentiment": [],
+    "word_count": 148,
+    "segment_count": 30
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_016",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_02"
+    ],
+    "start_time": 1257.62,
+    "end_time": 1328.62,
+    "topic": [
+      "Product innovation assessment",
+      "LCD vs TV display"
+    ],
+    "sentiment": [],
+    "word_count": 166,
+    "segment_count": 27
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_017",
+    "speakers": [
+      "SPEAKER_03",
+      "SPEAKER_01",
+      "SPEAKER_00",
+      "SPEAKER_02"
+    ],
+    "start_time": 1328.62,
+    "end_time": 1414.13,
+    "topic": [
+      "Product innovation assessment",
+      "LCD vs TV display",
+      "User preferences for LCD",
+      "Ease of use for LCD and TV",
+      "Cost implications of LCD"
+    ],
+    "sentiment": [],
+    "word_count": 161,
+    "segment_count": 25
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_018",
+    "speakers": [
+      "SPEAKER_03",
+      "SPEAKER_01",
+      "SPEAKER_02",
+      "SPEAKER_00"
+    ],
+    "start_time": 1414.13,
+    "end_time": 1485.14,
+    "topic": [
+      "Cost implications of LCD",
+      "Recommendation for product design",
+      "Product design changes",
+      "Production cost and technology",
+      "User experience and simplicity",
+      "Parental module and design complexity"
+    ],
+    "sentiment": [],
+    "word_count": 173,
+    "segment_count": 27
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_019",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_02",
+      "SPEAKER_03"
+    ],
+    "start_time": 1485.14,
+    "end_time": 1559.87,
+    "topic": [
+      "User customization",
+      "LCD usage",
+      "Cost reduction",
+      "Design flexibility",
+      "Special cognition feature"
+    ],
+    "sentiment": [],
+    "word_count": 161,
+    "segment_count": 27
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_020",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_03",
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 1559.87,
+    "end_time": 1625.87,
+    "topic": [
+      "Parental control module integration",
+      "Modular functionality and production costs"
+    ],
+    "sentiment": [],
+    "word_count": 170,
+    "segment_count": 29
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_021",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_02"
+    ],
+    "start_time": 1625.87,
+    "end_time": 1701.87,
+    "topic": [
+      "Parental control module integration",
+      "Modular functionality and production costs",
+      "Marketing survey for couples and TV ownership",
+      "Customer retention through add-ons"
+    ],
+    "sentiment": [],
+    "word_count": 161,
+    "segment_count": 33
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_022",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00",
+      "SPEAKER_02"
+    ],
+    "start_time": 1701.87,
+    "end_time": 1768.87,
+    "topic": [
+      "Customer retention through add-ons",
+      "Product updates and sales strategy",
+      "Remote control design and PCB requirements",
+      "PCB design for different product types",
+      "Cost implications of design changes",
+      "Alternative design solutions"
+    ],
+    "sentiment": [],
+    "word_count": 176,
+    "segment_count": 32
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_023",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_03"
+    ],
+    "start_time": 1768.87,
+    "end_time": 1854.58,
+    "topic": [
+      "Alternative design solutions",
+      "Customer customization options",
+      "Skin customization and aesthetics",
+      "Material selection for spongy texture",
+      "Prototype presentation",
+      "Financial issues in model creation",
+      "Project evaluation and satisfaction"
+    ],
+    "sentiment": [],
+    "word_count": 150,
+    "segment_count": 38
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_024",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_03",
+      "SPEAKER_02"
+    ],
+    "start_time": 1858.6,
+    "end_time": 1946.81,
+    "topic": [
+      "Work environment and creativity",
+      "Project presentation",
+      "Teamwork and leadership",
+      "New product ideas",
+      "New product development"
+    ],
+    "sentiment": [],
+    "word_count": 156,
+    "segment_count": 41
+  },
+  {
+    "meeting_id": "M-001",
+    "chunk_id": "M-001_CHUNK_025",
+    "speakers": [
+      "SPEAKER_02",
+      "SPEAKER_01",
+      "SPEAKER_03",
+      "SPEAKER_00"
+    ],
+    "start_time": 1946.81,
+    "end_time": 1990.81,
+    "topic": [
+      "Meeting structure and preparation",
+      "Project goals and budget",
+      "Celebration and next steps",
+      "Coffee machine"
+    ],
+    "sentiment": [],
+    "word_count": 72,
+    "segment_count": 21
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "topics": [
+    {
+      "topic": "Prototype preparation",
+      "source_segments": [
+        1,
+        2
+      ]
+    },
+    {
+      "topic": "Prototype design discussion",
+      "source_segments": [
+        12,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "topic": "Prototype presentation",
+      "source_segments": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Two versions of the prototypes were agreed upon",
+      "made_by": [
+        "SPEAKER_00"
+      ],
+      "source_segments": [
+        11,
+        13,
+        14
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "assigned_by": "SPEAKER_00",
+      "assigned_to": "SPEAKER_02",
+      "task": "Show the two prototypes",
+      "deadline": null,
+      "source_segments": [
+        19
+      ]
+    }
+  ]
+}

@@ -17,5 +17,4 @@ __pycache__/
 .vscode/
 
 # Generated/local data
-data/
 logs/.env

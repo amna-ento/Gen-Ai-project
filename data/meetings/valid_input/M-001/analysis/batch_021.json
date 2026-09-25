@@ -1,0 +1,60 @@
+{
+  "topics": [
+    {
+      "topic": "Customer retention through add-ons",
+      "source_segments": [
+        547,
+        548,
+        553,
+        554,
+        555
+      ]
+    },
+    {
+      "topic": "Product updates and sales strategy",
+      "source_segments": [
+        561,
+        562,
+        563,
+        564,
+        565
+      ]
+    },
+    {
+      "topic": "Remote control design and PCB requirements",
+      "source_segments": [
+        566,
+        567,
+        568,
+        569,
+        570
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "positive",
+      "source_segments": [
+        543,
+        544,
+        545,
+        546,
+        547
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        549,
+        550,
+        551,
+        552,
+        557
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

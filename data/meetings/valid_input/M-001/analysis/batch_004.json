@@ -1,0 +1,82 @@
+{
+  "topics": [
+    {
+      "topic": "Remote control setup",
+      "source_segments": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ]
+    },
+    {
+      "topic": "Button functionality explanation",
+      "source_segments": [
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106
+      ]
+    },
+    {
+      "topic": "LCD display on remote",
+      "source_segments": [
+        107,
+        108,
+        109,
+        110,
+        111
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        107,
+        108,
+        109,
+        110,
+        111
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

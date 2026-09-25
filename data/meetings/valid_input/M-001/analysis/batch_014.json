@@ -1,0 +1,69 @@
+{
+  "topics": [
+    {
+      "topic": "LCD vs. no LCD",
+      "source_segments": [
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358
+      ]
+    },
+    {
+      "topic": "Innovation of the prototype",
+      "source_segments": [
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        374,
+        375,
+        376,
+        377
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        352,
+        353,
+        359,
+        360,
+        361
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "positive",
+      "source_segments": [
+        354,
+        355,
+        356,
+        357,
+        358
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "positive",
+      "source_segments": [
+        366,
+        367,
+        368,
+        369,
+        370
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

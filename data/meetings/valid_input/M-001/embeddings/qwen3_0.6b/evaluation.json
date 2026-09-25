@@ -1,0 +1,20 @@
+{
+  "model_name": "qwen3_0.6b",
+  "model_path": "Qwen/Qwen3-Embedding-0.6B",
+  "embedding_validation": {
+    "expected_vectors": 25,
+    "actual_vectors": 25,
+    "dimension": 1024,
+    "missing_vectors": 0,
+    "invalid_values": 0,
+    "zero_vectors": 0,
+    "min_norm": 0.9981099963188171,
+    "max_norm": 1.0036048889160156,
+    "mean_norm": 0.9999025464057922
+  },
+  "metadata_count": 25,
+  "generation_time_seconds": 6.220447,
+  "embedding_file_size_bytes": 102528,
+  "embedding_file_size_kb": 100.12,
+  "embedding_file_size_mb": 0.0978
+}

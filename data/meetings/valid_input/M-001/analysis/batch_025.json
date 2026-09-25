@@ -1,0 +1,107 @@
+{
+  "topics": [
+    {
+      "topic": "New product development",
+      "source_segments": [
+        649,
+        651,
+        652
+      ]
+    },
+    {
+      "topic": "Meeting structure and preparation",
+      "source_segments": [
+        661,
+        662,
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "topic": "Project goals and budget",
+      "source_segments": [
+        669,
+        670,
+        671,
+        672
+      ]
+    },
+    {
+      "topic": "Celebration and next steps",
+      "source_segments": [
+        675,
+        676,
+        677
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_01",
+      "label": "positive",
+      "source_segments": [
+        649,
+        650,
+        671,
+        672,
+        675
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        661,
+        662,
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "label": "neutral",
+      "source_segments": [
+        653,
+        673,
+        674
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        654,
+        655,
+        656,
+        658
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Achieved project goal",
+      "made_by": [
+        "SPEAKER_02"
+      ],
+      "source_segments": [
+        669,
+        670
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "assigned_by": "SPEAKER_02",
+      "assigned_to": "SPEAKER_02",
+      "task": "Prepare a list of points to be discussed in future meetings",
+      "deadline": null,
+      "source_segments": [
+        663,
+        664,
+        665
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "topics": [
+    {
+      "topic": "User customization",
+      "source_segments": [
+        464,
+        465
+      ]
+    },
+    {
+      "topic": "LCD usage",
+      "source_segments": [
+        466,
+        472,
+        475
+      ]
+    },
+    {
+      "topic": "Cost reduction",
+      "source_segments": [
+        475
+      ]
+    },
+    {
+      "topic": "Design flexibility",
+      "source_segments": [
+        477
+      ]
+    },
+    {
+      "topic": "Special cognition feature",
+      "source_segments": [
+        480,
+        481,
+        482
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        460,
+        461,
+        462,
+        463,
+        464
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "positive",
+      "source_segments": [
+        466,
+        472,
+        475
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        470,
+        473,
+        476,
+        477
+      ]
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "label": "neutral",
+      "source_segments": [
+        480,
+        481
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "To have the feature without LCD",
+      "made_by": [
+        "SPEAKER_01",
+        "SPEAKER_02"
+      ],
+      "source_segments": [
+        472,
+        476
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "assigned_by": "SPEAKER_02",
+      "assigned_to": "SPEAKER_03",
+      "task": "Discuss the integration of special cognition",
+      "deadline": null,
+      "source_segments": [
+        480,
+        481
+      ]
+    }
+  ]
+}

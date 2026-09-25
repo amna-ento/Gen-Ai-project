@@ -1,0 +1,90 @@
+{
+  "topics": [
+    {
+      "topic": "Product design changes",
+      "source_segments": [
+        438,
+        439,
+        440,
+        441,
+        442,
+        443
+      ]
+    },
+    {
+      "topic": "Production cost and technology",
+      "source_segments": [
+        444,
+        445,
+        446,
+        447
+      ]
+    },
+    {
+      "topic": "User experience and simplicity",
+      "source_segments": [
+        448,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        456
+      ]
+    },
+    {
+      "topic": "Parental module and design complexity",
+      "source_segments": [
+        457,
+        458,
+        459
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_03",
+      "label": "neutral",
+      "source_segments": [
+        433,
+        434
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        438,
+        439,
+        440,
+        441,
+        442
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "positive",
+      "source_segments": [
+        444,
+        445,
+        446,
+        447
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        448,
+        449,
+        450,
+        451,
+        452
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

@@ -1,0 +1,76 @@
+{
+  "topics": [
+    {
+      "topic": "Modular functionality and production costs",
+      "source_segments": [
+        514,
+        515,
+        516,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        531,
+        532,
+        533,
+        534,
+        535,
+        536,
+        537,
+        538,
+        539,
+        540,
+        541,
+        542,
+        543
+      ]
+    },
+    {
+      "topic": "Marketing survey for couples and TV ownership",
+      "source_segments": [
+        518,
+        519,
+        520,
+        521
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        517,
+        524,
+        525,
+        526,
+        543
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        518,
+        519,
+        520,
+        521
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        528,
+        529,
+        530,
+        531,
+        532
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

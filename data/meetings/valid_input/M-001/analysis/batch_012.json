@@ -1,0 +1,83 @@
+{
+  "topics": [
+    {
+      "topic": "Material selection for remote",
+      "source_segments": [
+        298,
+        300,
+        302,
+        303
+      ]
+    },
+    {
+      "topic": "Evaluation criteria for remote",
+      "source_segments": [
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325
+      ]
+    },
+    {
+      "topic": "Evaluation method for remote",
+      "source_segments": [
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        300,
+        301,
+        302,
+        303,
+        326
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        298,
+        299,
+        304,
+        305,
+        306
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

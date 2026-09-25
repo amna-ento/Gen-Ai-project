@@ -1,0 +1,98 @@
+{
+  "topics": [
+    {
+      "topic": "Material selection for spongy texture",
+      "source_segments": [
+        595,
+        596,
+        598,
+        599,
+        601,
+        602
+      ]
+    },
+    {
+      "topic": "Prototype presentation",
+      "source_segments": [
+        604,
+        605,
+        606
+      ]
+    },
+    {
+      "topic": "Financial issues in model creation",
+      "source_segments": [
+        607,
+        608,
+        609
+      ]
+    },
+    {
+      "topic": "Project evaluation and satisfaction",
+      "source_segments": [
+        611,
+        612,
+        613,
+        614,
+        618
+      ]
+    },
+    {
+      "topic": "Work environment and creativity",
+      "source_segments": [
+        619,
+        620,
+        621,
+        622,
+        623
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        598,
+        599,
+        601,
+        602,
+        616
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        607,
+        608,
+        609,
+        623
+      ]
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "label": "neutral",
+      "source_segments": [
+        595,
+        596,
+        603,
+        604,
+        605
+      ]
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "label": "neutral",
+      "source_segments": [
+        611,
+        612,
+        613,
+        614,
+        618
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}
