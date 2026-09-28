@@ -1,0 +1,69 @@
+[
+  {
+    "meeting_id": "M-004",
+    "chunk_id": "M-004_CHUNK_001",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 0.53,
+    "end_time": 87.94,
+    "topic": [
+      "catching up",
+      "biking trip",
+      "camping logistics"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_01",
+        "label": "positive"
+      },
+      {
+        "speaker": "SPEAKER_00",
+        "label": "positive"
+      }
+    ],
+    "word_count": 162,
+    "segment_count": 18
+  },
+  {
+    "meeting_id": "M-004",
+    "chunk_id": "M-004_CHUNK_002",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01"
+    ],
+    "start_time": 87.94,
+    "end_time": 158.94,
+    "topic": [
+      "camping logistics",
+      "food preparation",
+      "hot water usage for weight",
+      "future catch-up/travel"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_01",
+        "label": "positive"
+      }
+    ],
+    "word_count": 163,
+    "segment_count": 19
+  },
+  {
+    "meeting_id": "M-004",
+    "chunk_id": "M-004_CHUNK_003",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 158.94,
+    "end_time": 163.94,
+    "topic": [
+      "future catch-up/travel"
+    ],
+    "sentiment": [],
+    "word_count": 8,
+    "segment_count": 3
+  }
+]

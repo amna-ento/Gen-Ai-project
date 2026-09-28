@@ -1,4 +1,6 @@
+
 import os
+import re
 import time
 
 from dotenv import load_dotenv
@@ -252,6 +254,37 @@ def generate_with_ollama(
     return answer.strip()
 
 
+def clean_citation_markers(
+    answer: str,
+) -> str:
+
+    answer = re.sub(
+        r"\s*\[Source:\s*M-\d+_CHUNK_\d+\]\s*",
+        " ",
+        answer,
+    )
+
+    answer = re.sub(
+        r"[ \t]+",
+        " ",
+        answer,
+    )
+
+    answer = re.sub(
+        r" +\n",
+        "\n",
+        answer,
+    )
+
+    answer = re.sub(
+        r"\n{3,}",
+        "\n\n",
+        answer,
+    )
+
+    return answer.strip()
+
+
 def generate_answer(
     question: str,
     context: str,
@@ -457,7 +490,9 @@ def main():
     )
 
     print(
-        answer
+        clean_citation_markers(
+            answer
+        )
     )
 
     print(

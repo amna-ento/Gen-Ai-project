@@ -1,0 +1,190 @@
+{
+  "meeting_id": "M-003",
+  "total_source_segments": 64,
+  "total_chunks": 5,
+  "chunking_config": {
+    "target_words": 160,
+    "max_words": 220,
+    "min_words": 60,
+    "max_duration_seconds": 90
+  },
+  "chunks": [
+    {
+      "meeting_id": "M-003",
+      "chunk_id": "M-003_CHUNK_001",
+      "source_segments": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "start_time": 0.0,
+      "end_time": 62.74,
+      "text": "SPEAKER_00: very well David it's lovely to see you again it's been a minute yeah it's been\nSPEAKER_01: in a minute that's quite unfortunate whatever you went up to well\nSPEAKER_00: you know I've been traveling around a little bit but most typically I've\nSPEAKER_00: been trying to go and watch a couple of different movies in the cinemas that\nSPEAKER_00: aren't available where I'm from but tell me David can you tell me what is your\nSPEAKER_00: favorite movie that you're watching at the moment or do you have a favorite\nSPEAKER_01: movie I was actually just thinking about that because I got the text if I want to\nSPEAKER_01: go to the cinema tomorrow evening but I don't actually know what's in the\nSPEAKER_01: cinema right now so I would have to check I mean I'm not sure if there's\nSPEAKER_01: any good movies out right now to be honest I would have to check there's\nSPEAKER_00: a great one right now and that just got released with the actress from that the",
+      "topic": [
+        "Movie recommendations"
+      ],
+      "sentiment": [
+        {
+          "speaker": "SPEAKER_00",
+          "label": "neutral"
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "label": "neutral"
+        }
+      ],
+      "word_count": 164,
+      "segment_count": 11
+    },
+    {
+      "meeting_id": "M-003",
+      "chunk_id": "M-003_CHUNK_002",
+      "source_segments": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "speakers": [
+        "SPEAKER_01",
+        "SPEAKER_00"
+      ],
+      "start_time": 62.74,
+      "end_time": 152.72,
+      "text": "SPEAKER_01: blonde one I forgot her name Robbie yeah weathering heights of what the\nSPEAKER_00: withering heights how is it actually correct it's supposed to be very\nSPEAKER_00: intense is it not intense good way or not in I think that's to the eye of the\nSPEAKER_00: perceiver but we will have to find out if we like it or not actually that could\nSPEAKER_01: be an idea to watch that could be an idea there you go I might think about did you\nSPEAKER_00: did you see a good one recently I watched a couple of series but we came\nSPEAKER_00: here as well to watch one of the new ones I don't actually know what it is\nSPEAKER_01: but yeah what's your favorite genre do you have one yeah I kind of it's a bit of\nSPEAKER_01: a guilty pleasure I kind of actually like science fiction movies okay I don't\nSPEAKER_01: know why it's I don't know over the last couple of years I started to enjoy\nSPEAKER_01: science fiction movies as probably one of my go-to genres so David it's more\nSPEAKER_01: like avatar or like avatar or more like interstellar or a rival stuff like that\nSPEAKER_01: amazing but not sci-fi as in like some random world or something but more like",
+      "topic": [
+        "Movie recommendations"
+      ],
+      "sentiment": [
+        {
+          "speaker": "SPEAKER_01",
+          "label": "neutral"
+        }
+      ],
+      "word_count": 204,
+      "segment_count": 13
+    },
+    {
+      "meeting_id": "M-003",
+      "chunk_id": "M-003_CHUNK_003",
+      "source_segments": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "speakers": [
+        "SPEAKER_01",
+        "SPEAKER_00"
+      ],
+      "start_time": 152.72,
+      "end_time": 213.24,
+      "text": "SPEAKER_01: you know not to distant future stuff got you got you interstellar was one of the\nSPEAKER_01: best movies I think they're ever yeah interstellar is absolutely amazing it's\nSPEAKER_01: my blowing it's really good I actually that could be an idea because\nSPEAKER_01: I'm just trying to figure out if I want to watch something later today and just\nSPEAKER_01: that I could be it could be a good choice something that you can definitely\nSPEAKER_00: watch for more than once one time you're very much looking for a movie I can tell\nSPEAKER_00: it's gonna be a movie weekend for you it's going to be a movie weekend\nSPEAKER_01: absolutely it's going to be a lazy movie weekend amazing the way it's\nSPEAKER_00: really nice and taking a break and doing movies how about traveling do you\nSPEAKER_01: like to travel done that David absolutely yeah I just looked for Italy\nSPEAKER_01: for short trip in beginning of March and two weeks already actually but just for\nSPEAKER_01: like a couple days maybe get some early spring Sun in the south of Italy\nSPEAKER_01: while it's still cold here where I am based amazing but I heard that you",
+      "topic": [
+        "Movie recommendations",
+        "Movie Weekend",
+        "Travel Plans"
+      ],
+      "sentiment": [],
+      "word_count": 189,
+      "segment_count": 13
+    },
+    {
+      "meeting_id": "M-003",
+      "chunk_id": "M-003_CHUNK_004",
+      "source_segments": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "start_time": 213.24,
+      "end_time": 286.22,
+      "text": "SPEAKER_00: recently went to Zimbabwe and really enjoyed it there didn't you absolutely\nSPEAKER_01: Zimbabwe was amazing I got to know the local culture local food to spend some\nSPEAKER_01: time down there while it was still cold here and had some more summery times\nSPEAKER_00: there yeah but what about Tonga I mean you went swimming there with the whales\nSPEAKER_00: and how was that it must have been an incredible experience absolutely I mean\nSPEAKER_01: it was kind of also a bit let's say scary but I mean they're massive right\nSPEAKER_01: but the guides actually told us that there's nothing to worry about so you\nSPEAKER_01: basically you take out the boat to the ocean and then you know you watch\nSPEAKER_01: for the whales and then try to get somewhat close to them you shouldn't go\nSPEAKER_01: too close but somewhat close and then yeah you can go swimming and you\nSPEAKER_01: basically wear your goggles and you just try to watch them as they pass\nSPEAKER_01: by you there also seems like they're they're sort of curious animals so it's\nSPEAKER_01: not like they're afraid they're kind of curious but also you're way too\nSPEAKER_01: small for them to perceive or to be perceived as a threat in some way right\nSPEAKER_01: so yeah that was quite impressive also swimming with dolphins I can highly",
+      "topic": [
+        "Travel Experiences",
+        "Swimming with Whales",
+        "Marine Life Interaction"
+      ],
+      "sentiment": [],
+      "word_count": 215,
+      "segment_count": 15
+    },
+    {
+      "meeting_id": "M-003",
+      "chunk_id": "M-003_CHUNK_005",
+      "source_segments": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "speakers": [
+        "SPEAKER_01",
+        "SPEAKER_00"
+      ],
+      "start_time": 286.22,
+      "end_time": 342.46,
+      "text": "SPEAKER_01: recommend that but we didn't do that in Tonga amazing I mean I heard I mean\nSPEAKER_00: they are one of the most intellectual animals and they apparently when\nSPEAKER_00: you see them and you look deep into their eyes it can be a very emotional\nSPEAKER_00: experience as well and it's very bonding experience is that what you\nSPEAKER_01: felt as well I didn't do that we were just swimming kind of alongside them\nSPEAKER_01: right so we were I mean we touched some of them but we weren't really I mean\nSPEAKER_01: let's say look in them into the eyes right so it was more like you know the\nSPEAKER_01: experience of being in the water them swimming past you playing around a\nSPEAKER_00: bit but that was impressive enough wonderful it was an absolute pleasure\nSPEAKER_00: speaking with you and I really hope that you find a good movie to watch\nSPEAKER_00: this weekend thank you but I look forward to speaking to you soon again\nSPEAKER_00: same take care take care David",
+      "topic": [
+        "Experience with dolphins"
+      ],
+      "sentiment": [],
+      "word_count": 165,
+      "segment_count": 12
+    }
+  ]
+}

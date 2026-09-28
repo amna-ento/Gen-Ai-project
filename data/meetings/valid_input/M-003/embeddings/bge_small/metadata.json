@@ -1,0 +1,100 @@
+[
+  {
+    "meeting_id": "M-003",
+    "chunk_id": "M-003_CHUNK_001",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01"
+    ],
+    "start_time": 0.0,
+    "end_time": 62.74,
+    "topic": [
+      "Movie recommendations"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_00",
+        "label": "neutral"
+      },
+      {
+        "speaker": "SPEAKER_01",
+        "label": "neutral"
+      }
+    ],
+    "word_count": 164,
+    "segment_count": 11
+  },
+  {
+    "meeting_id": "M-003",
+    "chunk_id": "M-003_CHUNK_002",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 62.74,
+    "end_time": 152.72,
+    "topic": [
+      "Movie recommendations"
+    ],
+    "sentiment": [
+      {
+        "speaker": "SPEAKER_01",
+        "label": "neutral"
+      }
+    ],
+    "word_count": 204,
+    "segment_count": 13
+  },
+  {
+    "meeting_id": "M-003",
+    "chunk_id": "M-003_CHUNK_003",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 152.72,
+    "end_time": 213.24,
+    "topic": [
+      "Movie recommendations",
+      "Movie Weekend",
+      "Travel Plans"
+    ],
+    "sentiment": [],
+    "word_count": 189,
+    "segment_count": 13
+  },
+  {
+    "meeting_id": "M-003",
+    "chunk_id": "M-003_CHUNK_004",
+    "speakers": [
+      "SPEAKER_00",
+      "SPEAKER_01"
+    ],
+    "start_time": 213.24,
+    "end_time": 286.22,
+    "topic": [
+      "Travel Experiences",
+      "Swimming with Whales",
+      "Marine Life Interaction"
+    ],
+    "sentiment": [],
+    "word_count": 215,
+    "segment_count": 15
+  },
+  {
+    "meeting_id": "M-003",
+    "chunk_id": "M-003_CHUNK_005",
+    "speakers": [
+      "SPEAKER_01",
+      "SPEAKER_00"
+    ],
+    "start_time": 286.22,
+    "end_time": 342.46,
+    "topic": [
+      "Experience with dolphins"
+    ],
+    "sentiment": [],
+    "word_count": 165,
+    "segment_count": 12
+  }
+]

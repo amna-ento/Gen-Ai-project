@@ -1,0 +1,12 @@
+{
+  "meeting_id": "M-002",
+  "total_source_segments": 0,
+  "total_chunks": 0,
+  "chunking_config": {
+    "target_words": 160,
+    "max_words": 220,
+    "min_words": 60,
+    "max_duration_seconds": 90
+  },
+  "chunks": []
+}

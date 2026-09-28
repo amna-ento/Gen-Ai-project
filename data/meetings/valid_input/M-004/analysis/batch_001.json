@@ -1,0 +1,65 @@
+{
+  "topics": [
+    {
+      "topic": "catching up",
+      "source_segments": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "topic": "biking trip",
+      "source_segments": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "topic": "camping logistics",
+      "source_segments": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "topic": "food preparation",
+      "source_segments": [
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_01",
+      "label": "positive",
+      "source_segments": [
+        1,
+        2,
+        6,
+        12,
+        26
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "positive",
+      "source_segments": [
+        3,
+        5,
+        9,
+        11,
+        17
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

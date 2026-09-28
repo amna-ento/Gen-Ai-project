@@ -1,0 +1,30 @@
+{
+    "meeting_id": "M-003",
+    "conversation_id": "C-001",
+    "turns": [
+        {
+            "turn_id": 1,
+            "question": "what was the meeting about",
+            "retrieval_question": "what was the meeting about",
+            "answer": "The meeting was about the participants’ recent travel experiences—specifically trips to Zimbabwe and Tonga where they swam with whales and dolphins—and also about movies they might watch.  \n\n[Source: M-003_CHUNK_004] [Source: M-003_CHUNK_005] [Source: M-003_CHUNK_001]",
+            "citations": [
+                "M-003_CHUNK_004",
+                "M-003_CHUNK_005",
+                "M-003_CHUNK_001"
+            ],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T11:58:21.117128+00:00"
+        },
+        {
+            "turn_id": 2,
+            "question": "hi, what was the discussion in the meeting reguarding led",
+            "retrieval_question": "hi, what was the discussion in the meeting reguarding led",
+            "answer": "I could not find enough information in the meeting context to answer this question.",
+            "citations": [],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T12:15:29.533999+00:00"
+        }
+    ]
+}

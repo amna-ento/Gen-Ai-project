@@ -83,6 +83,34 @@ def validate_citations(
     }
 
 
+def clean_citation_markers(answer: str) -> str:
+    answer = re.sub(
+        r"\s*\[Source:\s*M-\d+_CHUNK_\d+\]\s*",
+        " ",
+        answer,
+    )
+
+    answer = re.sub(
+        r"[ \t]+",
+        " ",
+        answer,
+    )
+
+    answer = re.sub(
+        r" +\n",
+        "\n",
+        answer,
+    )
+
+    answer = re.sub(
+        r"\n{3,}",
+        "\n\n",
+        answer,
+    )
+
+    return answer.strip()
+
+
 def display_citation_validation(
     validation_result: dict[str, Any],
 ):

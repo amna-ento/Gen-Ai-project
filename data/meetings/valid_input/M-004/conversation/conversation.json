@@ -1,0 +1,19 @@
+{
+    "meeting_id": "M-004",
+    "conversation_id": "C-001",
+    "turns": [
+        {
+            "turn_id": 1,
+            "question": "what was the meeting about",
+            "retrieval_question": "what was the meeting about",
+            "answer": "The meeting was a casual catch‑up between two friends discussing plans for a biking trip through southern Argentina, including details about camping, travel logistics, and food preparation.  \n\n[Source: M-004_CHUNK_001] [Source: M-004_CHUNK_002]",
+            "citations": [
+                "M-004_CHUNK_001",
+                "M-004_CHUNK_002"
+            ],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T12:06:57.110271+00:00"
+        }
+    ]
+}

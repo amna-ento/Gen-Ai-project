@@ -2,29 +2,10 @@ import json
 from pathlib import Path
 
 from src.chunking.chunker import MeetingChunker
+from src.storage.meeting_paths import validate_meeting_id
 
 
-MEETING_ID = "M-001"
-
-MEETING_DIR = Path(
-    f"data/meetings/valid_input/{MEETING_ID}"
-)
-
-TRANSCRIPT_PATH = (
-    MEETING_DIR
-    / "transcript"
-    / "cleaned_transcript.json"
-)
-
-ANALYSIS_PATH = (
-    MEETING_DIR
-    / "analysis"
-    / "final_analysis.json"
-)
-
-OUTPUT_DIR = MEETING_DIR / "chunks"
-
-OUTPUT_PATH = OUTPUT_DIR / "chunks.json"
+BASE_DIR = Path("data/meetings/valid_input")
 
 
 def load_json(path):
@@ -44,11 +25,42 @@ def get_transcript(data):
     )
 
 
-def process_chunking():
-    transcript_data = load_json(TRANSCRIPT_PATH)
-    analysis = load_json(ANALYSIS_PATH)
+def process_chunking(meeting_id: str):
+    meeting_id = validate_meeting_id(meeting_id)
 
-    transcript = get_transcript(transcript_data)
+    meeting_dir = BASE_DIR / meeting_id
+
+    if not meeting_dir.exists():
+        raise FileNotFoundError(
+            f"Meeting directory does not exist: {meeting_dir}"
+        )
+
+    transcript_path = (
+        meeting_dir
+        / "transcript"
+        / "cleaned_transcript.json"
+    )
+
+    analysis_path = (
+        meeting_dir
+        / "analysis"
+        / "final_analysis.json"
+    )
+
+    output_dir = meeting_dir / "chunks"
+    output_path = output_dir / "chunks.json"
+
+    transcript_data = load_json(
+        transcript_path
+    )
+
+    analysis = load_json(
+        analysis_path
+    )
+
+    transcript = get_transcript(
+        transcript_data
+    )
 
     chunker = MeetingChunker(
         target_words=160,
@@ -58,16 +70,21 @@ def process_chunking():
     )
 
     chunks = chunker.create_chunks(
-        meeting_id=MEETING_ID,
+        meeting_id=meeting_id,
         transcript=transcript,
         analysis=analysis,
     )
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    output_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     output = {
-        "meeting_id": MEETING_ID,
-        "total_source_segments": len(transcript),
+        "meeting_id": meeting_id,
+        "total_source_segments": len(
+            transcript
+        ),
         "total_chunks": len(chunks),
         "chunking_config": {
             "target_words": 160,
@@ -78,8 +95,7 @@ def process_chunking():
         "chunks": chunks,
     }
 
-    with open(
-        OUTPUT_PATH,
+    with output_path.open(
         "w",
         encoding="utf-8",
     ) as file:
@@ -91,12 +107,21 @@ def process_chunking():
         )
 
     print("Chunking completed.")
-    print(f"Input transcript: {TRANSCRIPT_PATH}")
-    print(f"Input analysis:   {ANALYSIS_PATH}")
-    print(f"Output:           {OUTPUT_PATH}")
-    print(f"Source segments:  {len(transcript)}")
-    print(f"Total chunks:     {len(chunks)}")
+    print(f"Meeting ID:        {meeting_id}")
+    print(f"Input transcript:  {transcript_path}")
+    print(f"Input analysis:    {analysis_path}")
+    print(f"Output:            {output_path}")
+    print(f"Source segments:   {len(transcript)}")
+    print(f"Total chunks:      {len(chunks)}")
+
+    return output_path
 
 
 if __name__ == "__main__":
-    process_chunking()
+    meeting_id = input(
+        "Enter meeting ID: "
+    ).strip()
+
+    process_chunking(
+        meeting_id
+    )

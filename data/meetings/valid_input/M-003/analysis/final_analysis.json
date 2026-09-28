@@ -1,0 +1,126 @@
+{
+  "topics": [
+    {
+      "topic": "Movie recommendations",
+      "source_segments": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "topic": "Movie Weekend",
+      "source_segments": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "topic": "Travel Plans",
+      "source_segments": [
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "topic": "Travel Experiences",
+      "source_segments": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "topic": "Swimming with Whales",
+      "source_segments": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "topic": "Marine Life Interaction",
+      "source_segments": [
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "topic": "Experience with dolphins",
+      "source_segments": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "neutral",
+      "source_segments": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "label": "neutral",
+      "source_segments": [
+        7,
+        8,
+        9,
+        10,
+        12
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

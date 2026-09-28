@@ -1,0 +1,48 @@
+{
+  "topics": [
+    {
+      "topic": "hot water usage for weight",
+      "source_segments": [
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "topic": "future catch-up/travel",
+      "source_segments": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_01",
+      "label": "positive",
+      "source_segments": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "label": "positive",
+      "source_segments": [
+        31,
+        36,
+        37,
+        39,
+        40
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

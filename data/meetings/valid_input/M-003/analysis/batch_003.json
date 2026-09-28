@@ -1,0 +1,29 @@
+{
+  "topics": [
+    {
+      "topic": "Experience with dolphins",
+      "source_segments": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    }
+  ],
+  "sentiment": [
+    {
+      "speaker": "SPEAKER_00",
+      "label": "positive",
+      "source_segments": [
+        61,
+        62,
+        63,
+        64
+      ]
+    }
+  ],
+  "decisions": [],
+  "action_items": []
+}

@@ -1,0 +1,334 @@
+{
+  "meeting_id": "M-003",
+  "audio": {
+    "filename": "test_meeting.wav",
+    "path": "data/meetings/valid_input/M-003/audio/test_meeting.wav",
+    "duration": 344.3883125,
+    "sample_rate": 16000,
+    "channels": 2
+  },
+  "language": "en",
+  "language_probability": 0.9501,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.96,
+      "text": "very well David it's lovely to see you again it's been a minute yeah it's been"
+    },
+    {
+      "start": 7.96,
+      "end": 13.64,
+      "text": "in a minute that's quite quite unfortunate whatever you went up to well"
+    },
+    {
+      "start": 13.64,
+      "end": 19.4,
+      "text": "you know I've been traveling around a little bit but most typically I've"
+    },
+    {
+      "start": 19.4,
+      "end": 25.72,
+      "text": "been trying to go and watch a couple of different movies in the cinemas that"
+    },
+    {
+      "start": 25.72,
+      "end": 32.44,
+      "text": "aren't available where I'm from but tell me David can you tell me what is your"
+    },
+    {
+      "start": 32.44,
+      "end": 35.8,
+      "text": "favorite movie that you're watching at the moment or do you have a favorite"
+    },
+    {
+      "start": 35.8,
+      "end": 39.64,
+      "text": "movie I was actually just thinking about that because I got the text if I want to"
+    },
+    {
+      "start": 39.64,
+      "end": 42.76,
+      "text": "go to the cinema tomorrow evening but I don't actually know what's in the"
+    },
+    {
+      "start": 42.76,
+      "end": 47.44,
+      "text": "cinema right now so I would have to check I mean I'm not sure if there's"
+    },
+    {
+      "start": 47.44,
+      "end": 54.04,
+      "text": "any good movies out right now to be honest I would have to check there's"
+    },
+    {
+      "start": 54.04,
+      "end": 62.74,
+      "text": "a great one right now and that just got released with the actress from that the"
+    },
+    {
+      "start": 62.74,
+      "end": 67.16,
+      "text": "blonde one I forgot her name Robbie yeah weathering heights of what the"
+    },
+    {
+      "start": 67.16,
+      "end": 73.12,
+      "text": "withering heights how is it actually correct it's supposed to be very"
+    },
+    {
+      "start": 73.12,
+      "end": 82.32,
+      "text": "intense is it not intense good way or not in I think that's to the eye of the"
+    },
+    {
+      "start": 82.32,
+      "end": 89.32,
+      "text": "perceiver but we will have to find out if we like it or not actually that could"
+    },
+    {
+      "start": 89.32,
+      "end": 98.0,
+      "text": "be an idea to watch that could be an idea there you go I might think about did you"
+    },
+    {
+      "start": 98.0,
+      "end": 105.76,
+      "text": "did you see a good one recently I watched a couple of series but we came"
+    },
+    {
+      "start": 105.76,
+      "end": 111.44,
+      "text": "here as well to to watch one of the new ones I don't actually know what it is"
+    },
+    {
+      "start": 111.48,
+      "end": 119.64,
+      "text": "but but yeah what's your favorite genre do you have one yeah I kind of it's a bit of"
+    },
+    {
+      "start": 119.64,
+      "end": 126.52,
+      "text": "a guilty pleasure I kind of actually like science fiction movies okay I don't"
+    },
+    {
+      "start": 126.52,
+      "end": 131.48,
+      "text": "know why it's I don't know over the last couple of years I started to enjoy"
+    },
+    {
+      "start": 131.48,
+      "end": 138.08,
+      "text": "science fiction movies as probably one of my go-to genres so David it's more"
+    },
+    {
+      "start": 138.08,
+      "end": 147.24,
+      "text": "like avatar or like avatar or more like interstellar or a rival stuff like that"
+    },
+    {
+      "start": 147.24,
+      "end": 152.72,
+      "text": "amazing but not sci-fi as in like some random world or something but more like"
+    },
+    {
+      "start": 152.72,
+      "end": 158.68,
+      "text": "you know not to distant future stuff got you got you interstellar was one of the"
+    },
+    {
+      "start": 158.68,
+      "end": 164.0,
+      "text": "best movies I think they're ever yeah interstellar is absolutely amazing it's"
+    },
+    {
+      "start": 164.0,
+      "end": 167.64,
+      "text": "my blowing it's really really good I actually that could be an idea because"
+    },
+    {
+      "start": 167.68,
+      "end": 171.16,
+      "text": "I'm just trying to figure out if I want to watch something later today and just"
+    },
+    {
+      "start": 171.16,
+      "end": 174.48,
+      "text": "that I could be it could be a good choice something that you can definitely"
+    },
+    {
+      "start": 174.48,
+      "end": 179.52,
+      "text": "watch for more than once one time you're very much looking for a movie I can tell"
+    },
+    {
+      "start": 179.52,
+      "end": 182.64,
+      "text": "it's gonna be a movie weekend for you it's going to be a movie weekend"
+    },
+    {
+      "start": 182.64,
+      "end": 186.44,
+      "text": "absolutely it's going to be a lazy movie weekend amazing the way it's"
+    },
+    {
+      "start": 186.44,
+      "end": 191.64,
+      "text": "really nice and taking a break and doing movies how about traveling do you"
+    },
+    {
+      "start": 191.64,
+      "end": 197.48,
+      "text": "like to travel done that David absolutely yeah I just looked for Italy"
+    },
+    {
+      "start": 197.48,
+      "end": 203.4,
+      "text": "for short trip in beginning of March and two weeks already actually but just for"
+    },
+    {
+      "start": 203.4,
+      "end": 208.44,
+      "text": "like a couple days maybe get get some early spring Sun in the south of Italy"
+    },
+    {
+      "start": 208.44,
+      "end": 213.24,
+      "text": "while it's still cold here where I am based amazing but I heard that you"
+    },
+    {
+      "start": 213.24,
+      "end": 218.16,
+      "text": "recently went to Zimbabwe and really enjoyed it there didn't you absolutely"
+    },
+    {
+      "start": 218.16,
+      "end": 225.04,
+      "text": "Zimbabwe was amazing I got to know the local culture local food to spend some"
+    },
+    {
+      "start": 225.04,
+      "end": 230.44,
+      "text": "time down there while it was still cold here and had some some more summery times"
+    },
+    {
+      "start": 230.44,
+      "end": 234.6,
+      "text": "there yeah but what about Tonga I mean you went swimming there with the whales"
+    },
+    {
+      "start": 234.6,
+      "end": 240.2,
+      "text": "and how was that it must have been an incredible experience absolutely I mean"
+    },
+    {
+      "start": 240.2,
+      "end": 247.5,
+      "text": "it was kind of also a bit let's say scary but I mean they're massive right"
+    },
+    {
+      "start": 247.5,
+      "end": 251.46,
+      "text": "but the guides actually told us that there's nothing to worry about so you"
+    },
+    {
+      "start": 251.46,
+      "end": 255.74,
+      "text": "basically you take out the boat to the ocean and then you you know you watch"
+    },
+    {
+      "start": 255.74,
+      "end": 259.22,
+      "text": "for the whales and then try to get somewhat close to them you shouldn't go"
+    },
+    {
+      "start": 259.22,
+      "end": 262.7,
+      "text": "too close but somewhat close and then yeah you can go swimming and you"
+    },
+    {
+      "start": 262.7,
+      "end": 267.66,
+      "text": "basically wear your goggles and you just try to watch them as they pass"
+    },
+    {
+      "start": 267.66,
+      "end": 272.9,
+      "text": "by you there also seems like they're they're sort of curious animals so it's"
+    },
+    {
+      "start": 272.9,
+      "end": 277.14,
+      "text": "not like they're afraid they're kind of curious but also you're way too"
+    },
+    {
+      "start": 277.18,
+      "end": 281.42,
+      "text": "small for them to perceive or to be perceived as a threat in some way right"
+    },
+    {
+      "start": 281.42,
+      "end": 286.22,
+      "text": "so yeah that was quite impressive also swimming with dolphins I can highly"
+    },
+    {
+      "start": 286.22,
+      "end": 290.5,
+      "text": "recommend that but we didn't do that in Tonga amazing I mean I heard I mean"
+    },
+    {
+      "start": 290.5,
+      "end": 297.22,
+      "text": "they are one of the most intellectual animals and and they apparently when"
+    },
+    {
+      "start": 297.22,
+      "end": 300.34,
+      "text": "you see them and you look deep into their eyes it can be a very emotional"
+    },
+    {
+      "start": 300.34,
+      "end": 306.02,
+      "text": "experience as well and it's very bonding experience is that what you"
+    },
+    {
+      "start": 306.02,
+      "end": 311.06,
+      "text": "felt as well I I didn't do that we were just swimming kind of alongside them"
+    },
+    {
+      "start": 311.06,
+      "end": 315.62,
+      "text": "right so we were I mean we touched some of them but we weren't really I mean"
+    },
+    {
+      "start": 315.62,
+      "end": 319.74,
+      "text": "let's say look in them into the eyes right so it was more like you know the"
+    },
+    {
+      "start": 319.74,
+      "end": 323.62,
+      "text": "experience of being in the water them swimming past you playing around a"
+    },
+    {
+      "start": 323.62,
+      "end": 330.02,
+      "text": "bit but that was impressive enough wonderful it was an absolute pleasure"
+    },
+    {
+      "start": 330.02,
+      "end": 334.22,
+      "text": "speaking with you and I really hope that you find a good movie to watch"
+    },
+    {
+      "start": 334.26,
+      "end": 338.82,
+      "text": "this weekend thank you but but I look forward to speaking to you soon again"
+    },
+    {
+      "start": 339.7,
+      "end": 342.46,
+      "text": "same take care take care David"
+    }
+  ]
+}

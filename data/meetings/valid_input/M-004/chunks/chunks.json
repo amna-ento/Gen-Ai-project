@@ -1,0 +1,129 @@
+{
+  "meeting_id": "M-004",
+  "total_source_segments": 40,
+  "total_chunks": 3,
+  "chunking_config": {
+    "target_words": 160,
+    "max_words": 220,
+    "min_words": 60,
+    "max_duration_seconds": 90
+  },
+  "chunks": [
+    {
+      "meeting_id": "M-004",
+      "chunk_id": "M-004_CHUNK_001",
+      "source_segments": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "speakers": [
+        "SPEAKER_01",
+        "SPEAKER_00"
+      ],
+      "start_time": 0.53,
+      "end_time": 87.94,
+      "text": "SPEAKER_01: Hey Eric, how are you doing?\nSPEAKER_01: Very good, very good, thank you.\nSPEAKER_00: Nice catching up again.\nSPEAKER_01: Yeah, we haven't talked in a while.\nSPEAKER_00: Yeah, I was wondering, surprised that we're catching up via this meeting.\nSPEAKER_01: Yeah, I think it's a very good and easy way to do it.\nSPEAKER_01: So tell me a bit what has been up in the past years.\nSPEAKER_01: Do you still enjoy biking?\nSPEAKER_00: Yes, actually I have a trip planned with a few friends in a week and a bit.\nSPEAKER_00: And we are going through the south of Argentina.\nSPEAKER_00: I am wondering how good I'll be able to keep up with the rest.\nSPEAKER_01: Yeah, excited.\nSPEAKER_01: I know them so I know that they go pretty hard, but they should be a bit more tired.\nSPEAKER_00: Yeah, hopefully.\nSPEAKER_01: Maybe that's on your side.\nSPEAKER_01: And do you do a lot of camping every day or hostels as well?\nSPEAKER_00: We plan on doing camping I think.\nSPEAKER_00: Yeah, because it's a pretty unpopulated area.",
+      "topic": [
+        "catching up",
+        "biking trip",
+        "camping logistics"
+      ],
+      "sentiment": [
+        {
+          "speaker": "SPEAKER_01",
+          "label": "positive"
+        },
+        {
+          "speaker": "SPEAKER_00",
+          "label": "positive"
+        }
+      ],
+      "word_count": 162,
+      "segment_count": 18
+    },
+    {
+      "meeting_id": "M-004",
+      "chunk_id": "M-004_CHUNK_002",
+      "source_segments": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "start_time": 87.94,
+      "end_time": 158.94,
+      "text": "SPEAKER_00: So I'm not really sure if we'll have the opportunity.\nSPEAKER_00: We go through a couple cities though.\nSPEAKER_00: So maybe we will be able to.\nSPEAKER_00: Dribbing a bed every now and then.\nSPEAKER_01: Yeah, maybe doing that and have a hot nice meal.\nSPEAKER_01: Well, but I think you can, you take something to cook, right?\nSPEAKER_00: Yeah, we're taking those like fossilized packages that you have to just throw in water and you have dinner in 10 minutes.\nSPEAKER_01: Ah, that's good.\nSPEAKER_00: Yeah, very practical.\nSPEAKER_01: Yeah, but in terms of weight, I mean, are those the ones that you have to throw hot water in or you just put everything in the hot water?\nSPEAKER_00: No, you throw hot water in I think.\nSPEAKER_01: Ah, yeah, because otherwise it's very heavy.\nSPEAKER_00: Yeah, yeah, yeah.\nSPEAKER_01: And it's very good.\nSPEAKER_01: It's very good.\nSPEAKER_01: Okay, I hope you enjoy your trip.\nSPEAKER_01: And let's catch up back sooner, sorry later when you come back.\nSPEAKER_00: For sure.\nSPEAKER_00: Yeah, hope to see you again soon.",
+      "topic": [
+        "camping logistics",
+        "food preparation",
+        "hot water usage for weight",
+        "future catch-up/travel"
+      ],
+      "sentiment": [
+        {
+          "speaker": "SPEAKER_01",
+          "label": "positive"
+        }
+      ],
+      "word_count": 163,
+      "segment_count": 19
+    },
+    {
+      "meeting_id": "M-004",
+      "chunk_id": "M-004_CHUNK_003",
+      "source_segments": [
+        38,
+        39,
+        40
+      ],
+      "speakers": [
+        "SPEAKER_01",
+        "SPEAKER_00"
+      ],
+      "start_time": 158.94,
+      "end_time": 163.94,
+      "text": "SPEAKER_01: Likewise, have a good one.\nSPEAKER_00: You too.\nSPEAKER_00: Thanks.",
+      "topic": [
+        "future catch-up/travel"
+      ],
+      "sentiment": [],
+      "word_count": 8,
+      "segment_count": 3
+    }
+  ]
+}

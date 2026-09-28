@@ -1,0 +1,214 @@
+{
+  "meeting_id": "M-004",
+  "audio": {
+    "filename": "meeting_300.wav",
+    "path": "data/meetings/valid_input/M-004/audio/meeting_300.wav",
+    "duration": 164.6643125,
+    "sample_rate": 16000,
+    "channels": 2
+  },
+  "language": "en",
+  "language_probability": 0.9456,
+  "segments": [
+    {
+      "start": 0.53,
+      "end": 3.53,
+      "text": "Hey Eric, how are you doing?"
+    },
+    {
+      "start": 3.53,
+      "end": 7.53,
+      "text": "Very good, very good, thank you."
+    },
+    {
+      "start": 7.53,
+      "end": 10.53,
+      "text": "Nice catching up again."
+    },
+    {
+      "start": 10.53,
+      "end": 13.53,
+      "text": "Yeah, we haven't talked in a while."
+    },
+    {
+      "start": 13.53,
+      "end": 23.94,
+      "text": "Yeah, I was wondering, surprised that we're catching up via this meeting."
+    },
+    {
+      "start": 23.94,
+      "end": 28.94,
+      "text": "Yeah, I think it's a very good and easy way to do it."
+    },
+    {
+      "start": 28.94,
+      "end": 32.94,
+      "text": "So tell me a bit what has been up in the past years."
+    },
+    {
+      "start": 32.94,
+      "end": 36.94,
+      "text": "Do you still enjoy biking?"
+    },
+    {
+      "start": 36.94,
+      "end": 44.94,
+      "text": "Yes, actually I have a trip planned with a few friends in a week and a bit."
+    },
+    {
+      "start": 44.94,
+      "end": 50.94,
+      "text": "And we are going through the south of Argentina."
+    },
+    {
+      "start": 50.94,
+      "end": 55.94,
+      "text": "I am wondering how good I'll be able to keep up with the rest."
+    },
+    {
+      "start": 56.94,
+      "end": 58.94,
+      "text": "Yeah, excited."
+    },
+    {
+      "start": 58.94,
+      "end": 66.94,
+      "text": "I know them so I know that they go pretty hard, but they should be a bit more tired."
+    },
+    {
+      "start": 66.94,
+      "end": 68.94,
+      "text": "Yeah, hopefully."
+    },
+    {
+      "start": 68.94,
+      "end": 70.94,
+      "text": "Maybe that's on your side."
+    },
+    {
+      "start": 70.94,
+      "end": 75.94,
+      "text": "And do you do a lot of camping every day or hostels as well?"
+    },
+    {
+      "start": 75.94,
+      "end": 80.94,
+      "text": "We plan on doing camping I think."
+    },
+    {
+      "start": 80.94,
+      "end": 87.94,
+      "text": "Yeah, because it's a pretty unpopulated area."
+    },
+    {
+      "start": 87.94,
+      "end": 91.94,
+      "text": "So I'm not really sure if we'll have the opportunity."
+    },
+    {
+      "start": 91.94,
+      "end": 93.94,
+      "text": "We go through a couple cities though."
+    },
+    {
+      "start": 93.94,
+      "end": 96.94,
+      "text": "So maybe we will be able to."
+    },
+    {
+      "start": 96.94,
+      "end": 100.94,
+      "text": "Dribbing a bed every now and then."
+    },
+    {
+      "start": 100.94,
+      "end": 103.94,
+      "text": "Yeah, maybe doing that and have a hot nice meal."
+    },
+    {
+      "start": 103.94,
+      "end": 108.94,
+      "text": "Well, but I think you can, you take something to cook, right?"
+    },
+    {
+      "start": 108.94,
+      "end": 120.94,
+      "text": "Yeah, we're taking those like fossilized packages that you have to just throw in water and you have dinner in 10 minutes."
+    },
+    {
+      "start": 120.94,
+      "end": 122.94,
+      "text": "Ah, that's good."
+    },
+    {
+      "start": 122.94,
+      "end": 124.94,
+      "text": "Yeah, very practical."
+    },
+    {
+      "start": 124.94,
+      "end": 132.94,
+      "text": "Yeah, but in terms of weight, I mean, are those the ones that you have to throw hot water in or you just put everything in the hot water?"
+    },
+    {
+      "start": 132.94,
+      "end": 136.94,
+      "text": "No, you throw hot water in I think."
+    },
+    {
+      "start": 136.94,
+      "end": 139.94,
+      "text": "Ah, yeah, because otherwise it's very heavy."
+    },
+    {
+      "start": 139.94,
+      "end": 142.94,
+      "text": "Yeah, yeah, yeah."
+    },
+    {
+      "start": 142.94,
+      "end": 144.94,
+      "text": "And it's very good."
+    },
+    {
+      "start": 144.94,
+      "end": 145.94,
+      "text": "It's very good."
+    },
+    {
+      "start": 145.94,
+      "end": 149.94,
+      "text": "Okay, I hope you enjoy your trip."
+    },
+    {
+      "start": 149.94,
+      "end": 154.94,
+      "text": "And let's catch up back sooner, sorry later when you come back."
+    },
+    {
+      "start": 154.94,
+      "end": 155.94,
+      "text": "For sure."
+    },
+    {
+      "start": 155.94,
+      "end": 158.94,
+      "text": "Yeah, hope to see you again soon."
+    },
+    {
+      "start": 158.94,
+      "end": 160.94,
+      "text": "Likewise, have a good one."
+    },
+    {
+      "start": 160.94,
+      "end": 161.94,
+      "text": "You too."
+    },
+    {
+      "start": 161.94,
+      "end": 163.94,
+      "text": "Thanks."
+    }
+  ]
+}

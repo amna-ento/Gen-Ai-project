@@ -1,0 +1,245 @@
+{
+  "meeting_id": "M-004",
+  "segments": [
+    {
+      "speaker": "SPEAKER_01",
+      "start": 0.53,
+      "end": 3.53,
+      "text": "Hey Eric, how are you doing?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 3.53,
+      "end": 7.53,
+      "text": "Very good, very good, thank you."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 7.53,
+      "end": 10.53,
+      "text": "Nice catching up again."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 10.53,
+      "end": 13.53,
+      "text": "Yeah, we haven't talked in a while."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 13.53,
+      "end": 23.94,
+      "text": "Yeah, I was wondering, surprised that we're catching up via this meeting."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 23.94,
+      "end": 28.94,
+      "text": "Yeah, I think it's a very good and easy way to do it."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 28.94,
+      "end": 32.94,
+      "text": "So tell me a bit what has been up in the past years."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 32.94,
+      "end": 36.94,
+      "text": "Do you still enjoy biking?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 36.94,
+      "end": 44.94,
+      "text": "Yes, actually I have a trip planned with a few friends in a week and a bit."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 44.94,
+      "end": 50.94,
+      "text": "And we are going through the south of Argentina."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 50.94,
+      "end": 55.94,
+      "text": "I am wondering how good I'll be able to keep up with the rest."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 56.94,
+      "end": 58.94,
+      "text": "Yeah, excited."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 58.94,
+      "end": 66.94,
+      "text": "I know them so I know that they go pretty hard, but they should be a bit more tired."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 66.94,
+      "end": 68.94,
+      "text": "Yeah, hopefully."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 68.94,
+      "end": 70.94,
+      "text": "Maybe that's on your side."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 70.94,
+      "end": 75.94,
+      "text": "And do you do a lot of camping every day or hostels as well?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 75.94,
+      "end": 80.94,
+      "text": "We plan on doing camping I think."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 80.94,
+      "end": 87.94,
+      "text": "Yeah, because it's a pretty unpopulated area."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 87.94,
+      "end": 91.94,
+      "text": "So I'm not really sure if we'll have the opportunity."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 91.94,
+      "end": 93.94,
+      "text": "We go through a couple cities though."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 93.94,
+      "end": 96.94,
+      "text": "So maybe we will be able to."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 96.94,
+      "end": 100.94,
+      "text": "Dribbing a bed every now and then."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 100.94,
+      "end": 103.94,
+      "text": "Yeah, maybe doing that and have a hot nice meal."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 103.94,
+      "end": 108.94,
+      "text": "Well, but I think you can, you take something to cook, right?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 108.94,
+      "end": 120.94,
+      "text": "Yeah, we're taking those like fossilized packages that you have to just throw in water and you have dinner in 10 minutes."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 120.94,
+      "end": 122.94,
+      "text": "Ah, that's good."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 122.94,
+      "end": 124.94,
+      "text": "Yeah, very practical."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 124.94,
+      "end": 132.94,
+      "text": "Yeah, but in terms of weight, I mean, are those the ones that you have to throw hot water in or you just put everything in the hot water?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 132.94,
+      "end": 136.94,
+      "text": "No, you throw hot water in I think."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 136.94,
+      "end": 139.94,
+      "text": "Ah, yeah, because otherwise it's very heavy."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 139.94,
+      "end": 142.94,
+      "text": "Yeah, yeah, yeah."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 142.94,
+      "end": 144.94,
+      "text": "And it's very good."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 144.94,
+      "end": 145.94,
+      "text": "It's very good."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 145.94,
+      "end": 149.94,
+      "text": "Okay, I hope you enjoy your trip."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 149.94,
+      "end": 154.94,
+      "text": "And let's catch up back sooner, sorry later when you come back."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 154.94,
+      "end": 155.94,
+      "text": "For sure."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 155.94,
+      "end": 158.94,
+      "text": "Yeah, hope to see you again soon."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 158.94,
+      "end": 160.94,
+      "text": "Likewise, have a good one."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 160.94,
+      "end": 161.94,
+      "text": "You too."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 161.94,
+      "end": 163.94,
+      "text": "Thanks."
+    }
+  ]
+}
