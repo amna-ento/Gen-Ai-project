@@ -1,19 +1,23 @@
-
 import time
-from sentence_transformers import MultiVectorEncoder, SentenceTransformer
+from sentence_transformers import (
+    MultiVectorEncoder,
+    SentenceTransformer,
+)
 
 from src.retrieval.hybrid_retrieval import (
-    BM25_WEIGHT,
-    CHUNKS_PATH,
-    MEETING_ID,
-    MODEL_NAME,
-    SEMANTIC_WEIGHT,
     build_bm25_index,
     build_hybrid_results,
     bm25_search,
     load_chunks,
     load_chroma,
     semantic_search,
+    MEETING_ID,
+    MODEL_NAME,
+)
+
+from src.generation.context_builder import (
+    build_context,
+    display_context,
 )
 
 
@@ -140,9 +144,11 @@ def rerank_with_colbert(
         reverse=True,
     )
 
-    reranked_results = reranked_results[
-        :RERANK_TOP_K
-    ]
+    reranked_results = (
+        reranked_results[
+            :RERANK_TOP_K
+        ]
+    )
 
     return (
         reranked_results,
@@ -160,8 +166,13 @@ def display_results(
     print("COLBERT RERANKING")
     print("=" * 100)
 
-    print(f"Meeting: {MEETING_ID}")
-    print(f"Question: {question}")
+    print(
+        f"Meeting: {MEETING_ID}"
+    )
+
+    print(
+        f"Question: {question}"
+    )
 
     print("\nHybrid Top-10:")
     print("-" * 100)
@@ -209,10 +220,14 @@ def main():
             "Question cannot be empty."
         )
 
-    print("\nBuilding Hybrid Top-10...")
+    print(
+        "\nBuilding Hybrid Top-10..."
+    )
 
-    hybrid_results = build_hybrid_retrieval(
-        question
+    hybrid_results = (
+        build_hybrid_retrieval(
+            question
+        )
     )
 
     if not hybrid_results:
@@ -225,7 +240,9 @@ def main():
         "Loading ColBERT model..."
     )
 
-    colbert_model = load_colbert_model()
+    colbert_model = (
+        load_colbert_model()
+    )
 
     (
         reranked_results,
@@ -234,6 +251,28 @@ def main():
         colbert_model,
         question,
         hybrid_results,
+    )
+
+    if not reranked_results:
+        print(
+            "No reranked results found."
+        )
+        return
+
+    print(
+        "\nFIRST COLBERT RESULT:"
+    )
+
+    print(
+        reranked_results[0]
+    )
+
+    context = build_context(
+        reranked_results
+    )
+
+    display_context(
+        context
     )
 
     display_results(
@@ -246,4 +285,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
