@@ -1,0 +1,699 @@
+{
+  "phase": 10,
+  "meeting_id": "M-001",
+  "conversation_id": "C-001",
+  "total_turns": 10,
+  "evaluations": {
+    "context_retention": {
+      "status": "PASS",
+      "total_follow_up_turns": 5,
+      "passed": 5,
+      "failed": 0,
+      "details": [
+        {
+          "turn_id": 2,
+          "question": "explain it a bit",
+          "history_used": true,
+          "answer_available": true,
+          "abstention": false,
+          "passed": true
+        },
+        {
+          "turn_id": 3,
+          "question": "so what if we expand it to 20$",
+          "history_used": true,
+          "answer_available": true,
+          "abstention": true,
+          "passed": true
+        },
+        {
+          "turn_id": 5,
+          "question": "was that led or lcd",
+          "history_used": true,
+          "answer_available": true,
+          "abstention": false,
+          "passed": true
+        },
+        {
+          "turn_id": 7,
+          "question": "in this whose protype was discussed",
+          "history_used": true,
+          "answer_available": true,
+          "abstention": false,
+          "passed": true
+        },
+        {
+          "turn_id": 8,
+          "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+          "history_used": true,
+          "answer_available": true,
+          "abstention": true,
+          "passed": true
+        }
+      ]
+    },
+    "follow_up_accuracy": {
+      "status": "PASS",
+      "total_follow_ups": 9,
+      "passed": 9,
+      "failed": 0,
+      "details": [
+        {
+          "turn_id": 2,
+          "question": "explain it a bit",
+          "previous_question": "what was the meetings whole sum",
+          "history_used_for_retrieval": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 3,
+          "question": "so what if we expand it to 20$",
+          "previous_question": "explain it a bit",
+          "history_used_for_retrieval": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 4,
+          "question": "is there any convo related to led",
+          "previous_question": "so what if we expand it to 20$",
+          "history_used_for_retrieval": false,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 5,
+          "question": "was that led or lcd",
+          "previous_question": "is there any convo related to led",
+          "history_used_for_retrieval": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 6,
+          "question": "hi",
+          "previous_question": "was that led or lcd",
+          "history_used_for_retrieval": false,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 7,
+          "question": "in this whose protype was discussed",
+          "previous_question": "hi",
+          "history_used_for_retrieval": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 8,
+          "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+          "previous_question": "in this whose protype was discussed",
+          "history_used_for_retrieval": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 9,
+          "question": "how do i make bomb's prototype",
+          "previous_question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+          "history_used_for_retrieval": false,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 10,
+          "question": "ok bye",
+          "previous_question": "how do i make bomb's prototype",
+          "history_used_for_retrieval": false,
+          "answer_available": true,
+          "passed": true
+        }
+      ]
+    },
+    "reference_resolution": {
+      "status": "PASS",
+      "total_reference_questions": 5,
+      "passed": 5,
+      "failed": 0,
+      "details": [
+        {
+          "turn_id": 2,
+          "question": "explain it a bit",
+          "history_attached": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 3,
+          "question": "so what if we expand it to 20$",
+          "history_attached": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 5,
+          "question": "was that led or lcd",
+          "history_attached": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 7,
+          "question": "in this whose protype was discussed",
+          "history_attached": true,
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 8,
+          "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+          "history_attached": true,
+          "answer_available": true,
+          "passed": true
+        }
+      ],
+      "note": "This section verifies that history is supplied. Semantic reference resolution is evaluated separately using the ground-truth tests below."
+    },
+    "reference_ground_truth": {
+      "status": "PASS",
+      "total_tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "details": [
+        {
+          "turn_id": 2,
+          "question": "explain it a bit",
+          "expected_concept": "$15 meeting cost",
+          "matched_term": "$15",
+          "answer": "The total cost of about $15 comes from adding the prices of the individual modules that make up the remote control.  \nSPEAKER 02 lists the components as “2 plus 4 plus 4 plus 2 plus 2”, which sums to $15, and notes that this is the cost if all functionalities are included【Source: M-001_CHUNK_011】.  \nThe prototype itself is also quoted at roughly $15, with the possibility of reducing production costs to about $10 if optimised【Source: M-001_CHUNK_003】.",
+          "passed": true
+        },
+        {
+          "turn_id": 5,
+          "question": "was that led or lcd",
+          "expected_concept": "LCD",
+          "matched_term": "lcd",
+          "answer": "The meeting context refers to \"LCD\" (Liquid Crystal Display), not LED. Discussions involved considerations about including an LCD in the remote control design, such as its cost and placement [Source: M-001_CHUNK_001], and mentions of LCD functionality in market preferences [Source: M-001_CHUNK_011]. No mention of LED is present in the provided context.",
+          "passed": true
+        }
+      ],
+      "note": "These are explicit ground-truth checks for known reference-resolution examples."
+    },
+    "previous_answer_consistency": {
+      "status": "PASS",
+      "total_follow_ups": 5,
+      "passed": 5,
+      "failed": 0,
+      "details": [
+        {
+          "turn_id": 2,
+          "question": "explain it a bit",
+          "previous_turn_id": 1,
+          "shared_citations": [
+            "M-001_CHUNK_011"
+          ],
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 3,
+          "question": "so what if we expand it to 20$",
+          "previous_turn_id": 2,
+          "shared_citations": [],
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 5,
+          "question": "was that led or lcd",
+          "previous_turn_id": 4,
+          "shared_citations": [],
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 7,
+          "question": "in this whose protype was discussed",
+          "previous_turn_id": 6,
+          "shared_citations": [],
+          "answer_available": true,
+          "passed": true
+        },
+        {
+          "turn_id": 8,
+          "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+          "previous_turn_id": 7,
+          "shared_citations": [],
+          "answer_available": true,
+          "passed": true
+        }
+      ]
+    },
+    "meeting_id_consistency": {
+      "status": "PASS",
+      "expected_meeting_id": "M-001",
+      "manager_meeting_id": "M-001",
+      "stored_meeting_id": "M-001",
+      "passed": true
+    },
+    "hallucination_safety": {
+      "status": "PASS",
+      "total_evaluated_turns": 8,
+      "passed": 8,
+      "failed": 0,
+      "details": [
+        {
+          "turn_id": 1,
+          "question": "what was the meetings whole sum",
+          "abstention": false,
+          "citation_count": 1,
+          "citations": [
+            "M-001_CHUNK_011"
+          ],
+          "passed": true
+        },
+        {
+          "turn_id": 2,
+          "question": "explain it a bit",
+          "abstention": false,
+          "citation_count": 2,
+          "citations": [
+            "M-001_CHUNK_011",
+            "M-001_CHUNK_003"
+          ],
+          "passed": true
+        },
+        {
+          "turn_id": 3,
+          "question": "so what if we expand it to 20$",
+          "abstention": true,
+          "citation_count": 0,
+          "citations": [],
+          "passed": true
+        },
+        {
+          "turn_id": 4,
+          "question": "is there any convo related to led",
+          "abstention": true,
+          "citation_count": 0,
+          "citations": [],
+          "passed": true
+        },
+        {
+          "turn_id": 5,
+          "question": "was that led or lcd",
+          "abstention": false,
+          "citation_count": 2,
+          "citations": [
+            "M-001_CHUNK_001",
+            "M-001_CHUNK_011"
+          ],
+          "passed": true
+        },
+        {
+          "turn_id": 7,
+          "question": "in this whose protype was discussed",
+          "abstention": false,
+          "citation_count": 2,
+          "citations": [
+            "M-001_CHUNK_001",
+            "M-001_CHUNK_003"
+          ],
+          "passed": true
+        },
+        {
+          "turn_id": 8,
+          "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+          "abstention": true,
+          "citation_count": 0,
+          "citations": [],
+          "passed": true
+        },
+        {
+          "turn_id": 9,
+          "question": "how do i make bomb's prototype",
+          "abstention": true,
+          "citation_count": 0,
+          "citations": [],
+          "passed": true
+        }
+      ],
+      "note": "Valid abstentions are treated as safe. Casual messages are excluded because they do not require meeting-context citations."
+    },
+    "conversation_history": {
+      "status": "PASS",
+      "history_matches_stored_turns": true,
+      "turn_ids_sequential": true,
+      "total_turns": 10,
+      "passed": true
+    }
+  },
+  "context_retention": {
+    "status": "PASS",
+    "total_follow_up_turns": 5,
+    "passed": 5,
+    "failed": 0,
+    "details": [
+      {
+        "turn_id": 2,
+        "question": "explain it a bit",
+        "history_used": true,
+        "answer_available": true,
+        "abstention": false,
+        "passed": true
+      },
+      {
+        "turn_id": 3,
+        "question": "so what if we expand it to 20$",
+        "history_used": true,
+        "answer_available": true,
+        "abstention": true,
+        "passed": true
+      },
+      {
+        "turn_id": 5,
+        "question": "was that led or lcd",
+        "history_used": true,
+        "answer_available": true,
+        "abstention": false,
+        "passed": true
+      },
+      {
+        "turn_id": 7,
+        "question": "in this whose protype was discussed",
+        "history_used": true,
+        "answer_available": true,
+        "abstention": false,
+        "passed": true
+      },
+      {
+        "turn_id": 8,
+        "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+        "history_used": true,
+        "answer_available": true,
+        "abstention": true,
+        "passed": true
+      }
+    ]
+  },
+  "follow_up_accuracy": {
+    "status": "PASS",
+    "total_follow_ups": 9,
+    "passed": 9,
+    "failed": 0,
+    "details": [
+      {
+        "turn_id": 2,
+        "question": "explain it a bit",
+        "previous_question": "what was the meetings whole sum",
+        "history_used_for_retrieval": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 3,
+        "question": "so what if we expand it to 20$",
+        "previous_question": "explain it a bit",
+        "history_used_for_retrieval": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 4,
+        "question": "is there any convo related to led",
+        "previous_question": "so what if we expand it to 20$",
+        "history_used_for_retrieval": false,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 5,
+        "question": "was that led or lcd",
+        "previous_question": "is there any convo related to led",
+        "history_used_for_retrieval": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 6,
+        "question": "hi",
+        "previous_question": "was that led or lcd",
+        "history_used_for_retrieval": false,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 7,
+        "question": "in this whose protype was discussed",
+        "previous_question": "hi",
+        "history_used_for_retrieval": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 8,
+        "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+        "previous_question": "in this whose protype was discussed",
+        "history_used_for_retrieval": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 9,
+        "question": "how do i make bomb's prototype",
+        "previous_question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+        "history_used_for_retrieval": false,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 10,
+        "question": "ok bye",
+        "previous_question": "how do i make bomb's prototype",
+        "history_used_for_retrieval": false,
+        "answer_available": true,
+        "passed": true
+      }
+    ]
+  },
+  "reference_resolution": {
+    "status": "PASS",
+    "total_reference_questions": 5,
+    "passed": 5,
+    "failed": 0,
+    "details": [
+      {
+        "turn_id": 2,
+        "question": "explain it a bit",
+        "history_attached": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 3,
+        "question": "so what if we expand it to 20$",
+        "history_attached": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 5,
+        "question": "was that led or lcd",
+        "history_attached": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 7,
+        "question": "in this whose protype was discussed",
+        "history_attached": true,
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 8,
+        "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+        "history_attached": true,
+        "answer_available": true,
+        "passed": true
+      }
+    ],
+    "note": "This section verifies that history is supplied. Semantic reference resolution is evaluated separately using the ground-truth tests below."
+  },
+  "reference_ground_truth": {
+    "status": "PASS",
+    "total_tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "details": [
+      {
+        "turn_id": 2,
+        "question": "explain it a bit",
+        "expected_concept": "$15 meeting cost",
+        "matched_term": "$15",
+        "answer": "The total cost of about $15 comes from adding the prices of the individual modules that make up the remote control.  \nSPEAKER 02 lists the components as “2 plus 4 plus 4 plus 2 plus 2”, which sums to $15, and notes that this is the cost if all functionalities are included【Source: M-001_CHUNK_011】.  \nThe prototype itself is also quoted at roughly $15, with the possibility of reducing production costs to about $10 if optimised【Source: M-001_CHUNK_003】.",
+        "passed": true
+      },
+      {
+        "turn_id": 5,
+        "question": "was that led or lcd",
+        "expected_concept": "LCD",
+        "matched_term": "lcd",
+        "answer": "The meeting context refers to \"LCD\" (Liquid Crystal Display), not LED. Discussions involved considerations about including an LCD in the remote control design, such as its cost and placement [Source: M-001_CHUNK_001], and mentions of LCD functionality in market preferences [Source: M-001_CHUNK_011]. No mention of LED is present in the provided context.",
+        "passed": true
+      }
+    ],
+    "note": "These are explicit ground-truth checks for known reference-resolution examples."
+  },
+  "previous_answer_consistency": {
+    "status": "PASS",
+    "total_follow_ups": 5,
+    "passed": 5,
+    "failed": 0,
+    "details": [
+      {
+        "turn_id": 2,
+        "question": "explain it a bit",
+        "previous_turn_id": 1,
+        "shared_citations": [
+          "M-001_CHUNK_011"
+        ],
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 3,
+        "question": "so what if we expand it to 20$",
+        "previous_turn_id": 2,
+        "shared_citations": [],
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 5,
+        "question": "was that led or lcd",
+        "previous_turn_id": 4,
+        "shared_citations": [],
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 7,
+        "question": "in this whose protype was discussed",
+        "previous_turn_id": 6,
+        "shared_citations": [],
+        "answer_available": true,
+        "passed": true
+      },
+      {
+        "turn_id": 8,
+        "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+        "previous_turn_id": 7,
+        "shared_citations": [],
+        "answer_available": true,
+        "passed": true
+      }
+    ]
+  },
+  "meeting_id_consistency": {
+    "status": "PASS",
+    "expected_meeting_id": "M-001",
+    "manager_meeting_id": "M-001",
+    "stored_meeting_id": "M-001",
+    "passed": true
+  },
+  "hallucination_safety": {
+    "status": "PASS",
+    "total_evaluated_turns": 8,
+    "passed": 8,
+    "failed": 0,
+    "details": [
+      {
+        "turn_id": 1,
+        "question": "what was the meetings whole sum",
+        "abstention": false,
+        "citation_count": 1,
+        "citations": [
+          "M-001_CHUNK_011"
+        ],
+        "passed": true
+      },
+      {
+        "turn_id": 2,
+        "question": "explain it a bit",
+        "abstention": false,
+        "citation_count": 2,
+        "citations": [
+          "M-001_CHUNK_011",
+          "M-001_CHUNK_003"
+        ],
+        "passed": true
+      },
+      {
+        "turn_id": 3,
+        "question": "so what if we expand it to 20$",
+        "abstention": true,
+        "citation_count": 0,
+        "citations": [],
+        "passed": true
+      },
+      {
+        "turn_id": 4,
+        "question": "is there any convo related to led",
+        "abstention": true,
+        "citation_count": 0,
+        "citations": [],
+        "passed": true
+      },
+      {
+        "turn_id": 5,
+        "question": "was that led or lcd",
+        "abstention": false,
+        "citation_count": 2,
+        "citations": [
+          "M-001_CHUNK_001",
+          "M-001_CHUNK_011"
+        ],
+        "passed": true
+      },
+      {
+        "turn_id": 7,
+        "question": "in this whose protype was discussed",
+        "abstention": false,
+        "citation_count": 2,
+        "citations": [
+          "M-001_CHUNK_001",
+          "M-001_CHUNK_003"
+        ],
+        "passed": true
+      },
+      {
+        "turn_id": 8,
+        "question": "so is it possible i can make burning gun's prototype with this lcd's formula",
+        "abstention": true,
+        "citation_count": 0,
+        "citations": [],
+        "passed": true
+      },
+      {
+        "turn_id": 9,
+        "question": "how do i make bomb's prototype",
+        "abstention": true,
+        "citation_count": 0,
+        "citations": [],
+        "passed": true
+      }
+    ],
+    "note": "Valid abstentions are treated as safe. Casual messages are excluded because they do not require meeting-context citations."
+  },
+  "conversation_history": {
+    "status": "PASS",
+    "history_matches_stored_turns": true,
+    "turn_ids_sequential": true,
+    "total_turns": 10,
+    "passed": true
+  },
+  "overall_status": "PASS"
+}

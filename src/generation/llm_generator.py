@@ -1,5 +1,5 @@
-
 import os
+import time
 
 from dotenv import load_dotenv
 from groq import Groq
@@ -11,19 +11,11 @@ from src.reranking.colbert_reranker import (
     rerank_with_colbert,
 )
 
-from src.generation.context_builder import (
-    build_context,
-)
+from src.generation.context_builder import build_context
 
 from src.generation.citation_validator import (
     validate_citations,
     display_citation_validation,
-)
-
-from generation.generation_guardrails import (
-    validate_user_input,
-    validate_meeting_context,
-    enforce_output_guardrails,
 )
 
 
@@ -36,37 +28,89 @@ OLLAMA_HOST = "http://localhost:11434"
 
 MEETING_ID = "M-001"
 
+ABSTENTION_MESSAGE = (
+    "I could not find enough information in the meeting context to answer this question."
+)
 
-def build_prompt(question, context):
-    return f"""
-You are a meeting assistant.
 
-Answer the user's question using ONLY the provided meeting context.
+def build_prompt(
+    question: str,
+    context: str,
+    conversation_history: str = "",
+) -> str:
 
-Rules:
-1. Do not use outside knowledge.
-2. Do not invent facts.
-3. If the answer cannot be found in the context, say:
-   "I couldn't find enough information in this meeting to answer that."
-4. Keep the answer concise and factual.
-5. Support important claims with citations.
-6. Every citation must use this exact format:
-   [Source: M-001_CHUNK_001]
-7. Only cite Chunk IDs that appear in the provided context.
-8. Do not create or guess Chunk IDs.
-9. Do not cite information that is not supported by the cited chunk.
+    history_section = ""
 
-Meeting Context:
-{context}
+    if conversation_history.strip():
+        history_section = f"""
+PREVIOUS CONVERSATION:
 
-User Question:
-{question}
+{conversation_history}
 
-Answer:
+Use the previous conversation only to understand references such as:
+- he / she / they
+- him / her / them
+- this / that / these / those
+- previous topics or entities
+
+Do not use the previous conversation as an independent source of facts.
+
+All factual claims in the answer must be supported by the CURRENT MEETING CONTEXT.
 """
 
+    prompt = f"""
+You are a meeting question-answering assistant.
 
-def load_groq():
+Answer the user's question using ONLY the CURRENT MEETING CONTEXT.
+
+{history_section}
+
+CURRENT MEETING CONTEXT:
+
+{context}
+
+CURRENT USER QUESTION:
+
+{question}
+
+RULES:
+
+1. Answer only from the current meeting context.
+
+2. Do not use outside knowledge.
+
+3. If the context does not contain enough information, respond exactly with:
+
+{ABSTENTION_MESSAGE}
+
+4. Keep the answer concise and factual.
+
+5. Every factual claim should be supported by the meeting context.
+
+6. Use citations in this exact format:
+
+[Source: M-001_CHUNK_001]
+
+7. Only cite chunk IDs that actually appear in the CURRENT MEETING CONTEXT.
+
+8. Never invent a citation.
+
+9. Do not cite information from the previous conversation.
+
+10. Previous conversation may only help resolve references in the current question.
+
+11. If the question is a follow-up question, answer the follow-up directly.
+
+12. Do not repeat the entire previous answer unless necessary.
+
+Return only the final answer.
+"""
+
+    return prompt
+
+
+def load_groq() -> Groq:
+
     api_key = os.getenv("GROQ_API_KEY")
 
     if not api_key:
@@ -80,288 +124,283 @@ def load_groq():
 
 
 def generate_with_groq(
-    client,
-    prompt,
-):
+    question: str,
+    context: str,
+    conversation_history: str = "",
+) -> str:
+
+    client = load_groq()
+
+    prompt = build_prompt(
+        question=question,
+        context=context,
+        conversation_history=conversation_history,
+    )
+
     response = client.chat.completions.create(
         model=GROQ_MODEL_NAME,
         messages=[
             {
+                "role": "system",
+                "content": (
+                    "You answer questions about "
+                    "meeting transcripts. "
+                    "Use only the supplied "
+                    "meeting context."
+                ),
+            },
+            {
                 "role": "user",
                 "content": prompt,
-            }
+            },
         ],
         temperature=0,
     )
 
-    return response.choices[0].message.content.strip()
+    answer = (
+        response
+        .choices[0]
+        .message
+        .content
+    )
+
+    if not answer:
+        raise ValueError(
+            "Groq returned an empty response."
+        )
+
+    return answer.strip()
 
 
-def load_ollama():
+def load_ollama() -> Client:
+
     return Client(
         host=OLLAMA_HOST
     )
 
 
 def generate_with_ollama(
-    client,
-    prompt,
-):
+    question: str,
+    context: str,
+    conversation_history: str = "",
+) -> str:
+
+    client = load_ollama()
+
+    prompt = build_prompt(
+        question=question,
+        context=context,
+        conversation_history=conversation_history,
+    )
+
     response = client.chat(
         model=OLLAMA_MODEL_NAME,
         messages=[
             {
+                "role": "system",
+                "content": (
+                    "You answer questions about "
+                    "meeting transcripts. "
+                    "Use only the supplied "
+                    "meeting context."
+                ),
+            },
+            {
                 "role": "user",
                 "content": prompt,
-            }
+            },
         ],
         options={
             "temperature": 0,
         },
     )
 
-    return response["message"]["content"].strip()
+    answer = (
+        response[
+            "message"
+        ][
+            "content"
+        ]
+    )
+
+    if not answer:
+        raise ValueError(
+            "Ollama returned an empty response."
+        )
+
+    return answer.strip()
 
 
 def generate_answer(
-    question,
-    context,
-):
-    prompt = build_prompt(
-        question,
-        context,
-    )
+    question: str,
+    context: str,
+    conversation_history: str = "",
+) -> dict:
+
+    start_time = time.time()
+
+    groq_error = None
 
     try:
-        print("\nTrying Groq...")
-
-        groq_client = load_groq()
 
         answer = generate_with_groq(
-            groq_client,
-            prompt,
+            question=question,
+            context=context,
+            conversation_history=conversation_history,
         )
 
-        print(
-            "Groq generation successful."
+        latency = (
+            time.time()
+            - start_time
         )
 
         return {
             "answer": answer,
-            "model": GROQ_MODEL_NAME,
             "provider": "Groq",
+            "model": GROQ_MODEL_NAME,
+            "latency_seconds": round(
+                latency,
+                3,
+            ),
         }
 
-    except Exception as groq_error:
+    except Exception as error:
 
-        print(
-            f"\nGroq generation failed: "
-            f"{groq_error}"
+        groq_error = str(error)
+
+    try:
+
+        answer = generate_with_ollama(
+            question=question,
+            context=context,
+            conversation_history=conversation_history,
         )
 
-        print(
-            "Falling back to Ollama..."
+        latency = (
+            time.time()
+            - start_time
         )
 
-        try:
-            ollama_client = load_ollama()
+        return {
+            "answer": answer,
+            "provider": "Ollama",
+            "model": OLLAMA_MODEL_NAME,
+            "latency_seconds": round(
+                latency,
+                3,
+            ),
+        }
 
-            answer = generate_with_ollama(
-                ollama_client,
-                prompt,
-            )
+    except Exception as ollama_error:
 
-            print(
-                "Ollama generation successful."
-            )
-
-            return {
-                "answer": answer,
-                "model": OLLAMA_MODEL_NAME,
-                "provider": "Ollama",
-            }
-
-        except Exception as ollama_error:
-
-            raise RuntimeError(
-                "Both LLM providers failed.\n"
-                f"Groq error: {groq_error}\n"
-                f"Ollama error: {ollama_error}"
-            )
+        raise RuntimeError(
+            "Both Groq and Ollama generation failed.\n"
+            f"Groq error: {groq_error}\n"
+            f"Ollama error: {ollama_error}"
+        )
 
 
 def main():
 
-    # ========================================================
-    # Input
-    # ========================================================
+    print(
+        "\n"
+        + "=" * 100
+    )
+
+    print(
+        "PHASE 9 - LLM GENERATION"
+    )
+
+    print(
+        "=" * 100
+    )
 
     question = input(
         "\nEnter your question: "
     ).strip()
 
-    # ========================================================
-    # Input Guardrail
-    # ========================================================
-
-    print(
-        "\nRunning input guardrail..."
-    )
-
-    input_validation = validate_user_input(
-        question
-    )
-
-    if not input_validation["valid"]:
-        raise ValueError(
-            "Input guardrail rejected the question: "
-            f"{input_validation['reason']}"
+    if not question:
+        print(
+            "Question cannot be empty."
         )
-
-    print(
-        "Input guardrail passed."
-    )
-
-    # ========================================================
-    # Hybrid Retrieval
-    # ========================================================
+        return
 
     print(
         "\nBuilding Hybrid Top-10..."
     )
 
-    hybrid_results = build_hybrid_retrieval(
-        question
+    hybrid_results = (
+        build_hybrid_retrieval(
+            question
+        )
     )
 
     if not hybrid_results:
 
         print(
-            "No hybrid results found."
+            "\nNo hybrid results found."
         )
 
         return
 
-    # ========================================================
-    # ColBERT Reranking
-    # ========================================================
-
     print(
-        "Loading ColBERT model..."
+        f"Retrieved "
+        f"{len(hybrid_results)} "
+        f"candidate chunks."
     )
 
-    colbert_model = load_colbert_model()
+    print(
+        "\nLoading ColBERT model..."
+    )
 
-    reranked_results, latency_ms = (
-        rerank_with_colbert(
-            colbert_model,
-            question,
-            hybrid_results,
-        )
+    colbert_model = (
+        load_colbert_model()
+    )
+
+    (
+        reranked_results,
+        rerank_latency_ms,
+    ) = rerank_with_colbert(
+        colbert_model,
+        question,
+        hybrid_results,
     )
 
     if not reranked_results:
 
         print(
-            "No reranked results found."
+            "\nNo reranked results found."
         )
 
         return
-
-    # ========================================================
-    # Meeting Isolation Guardrail
-    # ========================================================
-
-    print(
-        "\nRunning meeting isolation guardrail..."
-    )
-
-    meeting_validation = validate_meeting_context(
-        reranked_results,
-        expected_meeting_id=MEETING_ID,
-    )
-
-    if not meeting_validation["valid"]:
-
-        raise ValueError(
-            "Meeting isolation guardrail failed: "
-            f"{meeting_validation['reason']}"
-        )
-
-    print(
-        "Meeting isolation guardrail passed."
-    )
-
-    # ========================================================
-    # Context Building
-    # ========================================================
-
-    print(
-        "\nBuilding context..."
-    )
 
     context = build_context(
         reranked_results
     )
 
-    if not context:
-
-        print(
-            "No context available."
-        )
-
-        return
-
-    # ========================================================
-    # Generation
-    # ========================================================
-
     print(
-        "Generating answer..."
+        "\nGenerating answer..."
     )
 
     result = generate_answer(
-        question,
-        context,
+        question=question,
+        context=context,
     )
 
-    # ========================================================
-    # Output Guardrails
-    # ========================================================
+    answer = result[
+        "answer"
+    ]
 
-    print(
-        "\nRunning output guardrails..."
-    )
-
-    guardrailed_answer = (
-        enforce_output_guardrails(
-            answer=result["answer"],
+    citation_validation = (
+        validate_citations(
+            answer=answer,
             reranked_results=reranked_results,
-            expected_meeting_id=MEETING_ID,
         )
     )
 
-    result["answer"] = guardrailed_answer
-
     print(
-        "Output guardrails passed."
-    )
-
-    # ========================================================
-    # Citation Validation
-    # ========================================================
-
-    citation_result = validate_citations(
-        result["answer"],
-        reranked_results,
-    )
-
-    # ========================================================
-    # Final Answer
-    # ========================================================
-
-    print(
-        "\n" + "=" * 100
+        "\n"
+        + "=" * 100
     )
 
     print(
@@ -373,34 +412,36 @@ def main():
     )
 
     print(
-        result["answer"]
+        answer
     )
 
     print(
-        "\n" + "-" * 100
+        "\nProvider:",
+        result["provider"],
     )
 
     print(
-        f"Generation Provider: "
-        f"{result['provider']}"
+        "Model:",
+        result["model"],
     )
 
     print(
-        f"Generation Model: "
-        f"{result['model']}"
+        "Generation Latency:",
+        result["latency_seconds"],
+        "seconds",
     )
 
     print(
-        f"ColBERT Reranking Latency: "
-        f"{latency_ms:.4f} ms"
-    )
-
-    print(
-        "-" * 100
+        "ColBERT Reranking Latency:",
+        round(
+            rerank_latency_ms,
+            3,
+        ),
+        "ms",
     )
 
     display_citation_validation(
-        citation_result
+        citation_validation
     )
 
 
