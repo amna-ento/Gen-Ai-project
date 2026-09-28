@@ -1,220 +1,191 @@
-import json
+
 import time
-from pathlib import Path
 
-import chromadb
-from rank_bm25 import BM25Okapi
-from sentence_transformers import SentenceTransformer
+from src.storage.meeting_paths import validate_meeting_id
+from src.retrieval.semantic_retrieval import (
+    load_model,
+    load_collection,
+    semantic_search,
+)
+from src.retrieval.bm25_retrieval import (
+    load_chunks,
+    build_bm25_index,
+    search_bm25,
+)
 
-
-BASE_DIR = Path("data/meetings/valid_input/M-001")
-
-CHUNKS_PATH = BASE_DIR / "chunks/chunks.json"
-CHROMA_DIR = BASE_DIR / "embeddings/chroma"
-
-COLLECTION_NAME = "meeting_chunks"
-
-MEETING_ID = "M-001"
-
-MODEL_NAME = "BAAI/bge-small-en-v1.5"
-
-TOP_K = 10
 
 SEMANTIC_WEIGHT = 0.6
 BM25_WEIGHT = 0.4
+TOP_K = 10
 
 
-def load_chunks():
-    with open(
-        CHUNKS_PATH,
-        "r",
-        encoding="utf-8",
-    ) as f:
-        chunks = json.load(f)["chunks"]
+def min_max_normalize(scores):
+    if not scores:
+        return []
 
-    return [
-        chunk
-        for chunk in chunks
-        if str(chunk["meeting_id"]) == MEETING_ID
-    ]
+    minimum = min(scores)
+    maximum = max(scores)
 
-
-def tokenize(text):
-    return text.lower().split()
-
-
-def build_bm25_index(chunks):
-    tokenized_documents = [
-        tokenize(chunk["text"])
-        for chunk in chunks
-    ]
-
-    return BM25Okapi(
-        tokenized_documents
-    )
-
-
-def load_chroma():
-    client = chromadb.PersistentClient(
-        path=str(CHROMA_DIR)
-    )
-
-    collection = client.get_collection(
-        name=COLLECTION_NAME
-    )
-
-    return collection
-
-
-def normalize_scores(scores):
-    min_score = min(scores)
-    max_score = max(scores)
-
-    if max_score == min_score:
-        return [1.0 for _ in scores]
+    if maximum == minimum:
+        return [1.0] * len(scores)
 
     return [
-        (score - min_score)
-        / (max_score - min_score)
+        (score - minimum) / (maximum - minimum)
         for score in scores
     ]
 
 
-def semantic_search(
-    collection,
-    model,
-    question,
+def build_hybrid_retrieval(
+    question: str,
+    meeting_id: str,
 ):
-    query_embedding = model.encode(
-        question,
-        normalize_embeddings=True,
+    meeting_id = validate_meeting_id(
+        meeting_id
     )
 
-    results = collection.query(
-        query_embeddings=[
-            query_embedding.tolist()
-        ],
-        n_results=TOP_K,
-        where={
-            "meeting_id": MEETING_ID
-        },
-        include=[
-            "documents",
-            "metadatas",
-            "distances",
-        ],
+    total_start = time.perf_counter()
+
+    chunks = load_chunks(
+        meeting_id
     )
 
-    semantic_results = []
+    bm25 = build_bm25_index(
+        chunks
+    )
 
-    for i, chunk_id in enumerate(
-        results["ids"][0]
-    ):
-        distance = results["distances"][0][i]
+    model = load_model()
 
-        semantic_score = 1.0 - distance
+    collection = load_collection(
+        meeting_id
+    )
 
-        semantic_results.append(
-            {
-                "chunk_id": chunk_id,
-                "score": semantic_score,
-                "distance": distance,
-                "text": results["documents"][0][i],
-                "metadata": results["metadatas"][0][i],
-            }
+    semantic_results, semantic_latency = (
+        semantic_search(
+            collection,
+            model,
+            question,
+            meeting_id,
+        )
+    )
+
+    documents = semantic_results["documents"][0]
+    metadatas = semantic_results["metadatas"][0]
+    distances = semantic_results["distances"][0]
+
+    if len(documents) == 0:
+        raise ValueError(
+            f"No semantic results found "
+            f"for meeting {meeting_id}."
         )
 
-    return semantic_results
-
-
-def bm25_search(
-    bm25,
-    chunks,
-    question,
-):
-    query_tokens = tokenize(question)
-
-    scores = bm25.get_scores(
-        query_tokens
-    )
-
-    ranked_indices = sorted(
-        range(len(scores)),
-        key=lambda index: scores[index],
-        reverse=True,
-    )[:TOP_K]
-
-    bm25_results = []
-
-    for index in ranked_indices:
-        bm25_results.append(
-            {
-                "chunk_id": chunks[index]["chunk_id"],
-                "score": float(scores[index]),
-                "text": chunks[index]["text"],
-                "metadata": chunks[index],
-            }
+    if not (
+        len(documents)
+        == len(metadatas)
+        == len(distances)
+    ):
+        raise ValueError(
+            "Semantic result size mismatch."
         )
 
-    return bm25_results
-
-
-def build_hybrid_results(
-    semantic_results,
-    bm25_results,
-):
-    semantic_scores = [
-        result["score"]
-        for result in semantic_results
+    semantic_similarities = [
+        1.0 - float(distance)
+        for distance in distances
     ]
 
-    bm25_scores = [
-        result["score"]
-        for result in bm25_results
-    ]
-
-    normalized_semantic = normalize_scores(
-        semantic_scores
+    normalized_semantic = min_max_normalize(
+        semantic_similarities
     )
 
-    normalized_bm25 = normalize_scores(
-        bm25_scores
-    )
+    semantic_items = {}
 
-    combined = {}
-
-    for i, result in enumerate(
-        semantic_results
+    for index in range(
+        len(documents)
     ):
-        chunk_id = result["chunk_id"]
+        metadata = metadatas[index]
 
-        combined[chunk_id] = {
+        result_meeting_id = metadata[
+            "meeting_id"
+        ]
+
+        if result_meeting_id != meeting_id:
+            raise ValueError(
+                "Meeting isolation violation: "
+                f"expected {meeting_id}, "
+                f"found {result_meeting_id}."
+            )
+
+        chunk_id = metadata[
+            "chunk_id"
+        ]
+
+        semantic_items[chunk_id] = {
             "chunk_id": chunk_id,
-            "text": result["text"],
-            "metadata": result["metadata"],
-            "semantic_score": normalized_semantic[i],
+            "text": documents[index],
+            "metadata": metadata,
+            "semantic_score": normalized_semantic[
+                index
+            ],
             "bm25_score": 0.0,
         }
 
-    for i, result in enumerate(
-        bm25_results
-    ):
-        chunk_id = result["chunk_id"]
+    bm25_results, bm25_latency = (
+        search_bm25(
+            bm25,
+            chunks,
+            question,
+            meeting_id,
+        )
+    )
 
-        if chunk_id not in combined:
-            combined[chunk_id] = {
+    bm25_scores = [
+        float(result["score"])
+        for result in bm25_results
+    ]
+
+    normalized_bm25 = min_max_normalize(
+        bm25_scores
+    )
+
+    for index in range(
+        len(bm25_results)
+    ):
+        result = bm25_results[index]
+
+        metadata = result[
+            "metadata"
+        ]
+
+        result_meeting_id = metadata[
+            "meeting_id"
+        ]
+
+        if result_meeting_id != meeting_id:
+            raise ValueError(
+                "Meeting isolation violation: "
+                f"expected {meeting_id}, "
+                f"found {result_meeting_id}."
+            )
+
+        chunk_id = result[
+            "chunk_id"
+        ]
+
+        if chunk_id not in semantic_items:
+            semantic_items[chunk_id] = {
                 "chunk_id": chunk_id,
                 "text": result["text"],
-                "metadata": result["metadata"],
+                "metadata": metadata,
                 "semantic_score": 0.0,
-                "bm25_score": 0.0,
+                "bm25_score": normalized_bm25[
+                    index
+                ],
             }
+        else:
+            semantic_items[chunk_id][
+                "bm25_score"
+            ] = normalized_bm25[index]
 
-        combined[chunk_id][
-            "bm25_score"
-        ] = normalized_bm25[i]
-
-    for result in combined.values():
+    for result in semantic_items.values():
         result["hybrid_score"] = (
             SEMANTIC_WEIGHT
             * result["semantic_score"]
@@ -222,84 +193,148 @@ def build_hybrid_results(
             * result["bm25_score"]
         )
 
+        if result["metadata"][
+            "meeting_id"
+        ] != meeting_id:
+            raise ValueError(
+                "Meeting isolation violation "
+                "during hybrid fusion."
+            )
+
     ranked_results = sorted(
-        combined.values(),
-        key=lambda result: result[
+        semantic_items.values(),
+        key=lambda item: item[
             "hybrid_score"
         ],
         reverse=True,
-    )
+    )[:TOP_K]
 
-    return ranked_results[:TOP_K]
+    total_latency = (
+        time.perf_counter()
+        - total_start
+    ) * 1000
+
+    return {
+        "meeting_id": meeting_id,
+        "results": ranked_results,
+        "semantic_latency_ms": semantic_latency,
+        "bm25_latency_ms": bm25_latency,
+        "total_latency_ms": total_latency,
+    }
 
 
 def display_results(
     question,
-    results,
-    latency_ms,
+    retrieval_output,
 ):
-    print("\n" + "=" * 100)
+    meeting_id = retrieval_output[
+        "meeting_id"
+    ]
+
+    results = retrieval_output[
+        "results"
+    ]
+
+    print("\n" + "=" * 80)
     print("HYBRID RETRIEVAL")
-    print("=" * 100)
+    print("=" * 80)
 
-    print(f"Meeting:          {MEETING_ID}")
-    print(f"Top-K:            {TOP_K}")
     print(
-        f"Semantic Weight:  {SEMANTIC_WEIGHT}"
-    )
-    print(
-        f"BM25 Weight:      {BM25_WEIGHT}"
-    )
-    print(f"Question:         {question}")
-    print(
-        f"Retrieval Latency: {latency_ms:.4f} ms"
+        f"Meeting: {meeting_id}"
     )
 
-    print("=" * 100)
+    print(
+        f"Question: {question}"
+    )
+
+    print(
+        f"Semantic Weight: "
+        f"{SEMANTIC_WEIGHT}"
+    )
+
+    print(
+        f"BM25 Weight: "
+        f"{BM25_WEIGHT}"
+    )
+
+    print(
+        f"Semantic Latency: "
+        f"{retrieval_output['semantic_latency_ms']:.2f} ms"
+    )
+
+    print(
+        f"BM25 Latency: "
+        f"{retrieval_output['bm25_latency_ms']:.2f} ms"
+    )
+
+    print(
+        f"Total Latency: "
+        f"{retrieval_output['total_latency_ms']:.2f} ms"
+    )
+
+    print("=" * 80)
 
     for rank, result in enumerate(
         results,
         start=1,
     ):
-        metadata = result["metadata"]
+        metadata = result[
+            "metadata"
+        ]
 
         print(f"\nRank: {rank}")
+
         print(
             f"Chunk ID: "
             f"{result['chunk_id']}"
         )
+
         print(
             f"Hybrid Score: "
             f"{result['hybrid_score']:.4f}"
         )
+
         print(
             f"Semantic Score: "
             f"{result['semantic_score']:.4f}"
         )
+
         print(
             f"BM25 Score: "
             f"{result['bm25_score']:.4f}"
         )
+
         print(
             f"Speaker: "
             f"{metadata.get('speaker', '')}"
         )
+
         print(
             f"Time: "
             f"{metadata.get('start_time', 0.0):.2f}"
             f" - "
             f"{metadata.get('end_time', 0.0):.2f}"
         )
+
         print(
-            f"Text: {result['text']}"
+            f"Text: "
+            f"{result['text']}"
         )
 
-    print("\n" + "=" * 100)
+    print("\n" + "=" * 80)
 
 
 def main():
+    meeting_id = input(
+        "\nEnter meeting ID: "
+    ).strip()
+
+    meeting_id = validate_meeting_id(
+        meeting_id
+    )
+
     question = input(
-        "\nEnter your question: "
+        "Enter your question: "
     ).strip()
 
     if not question:
@@ -307,53 +342,16 @@ def main():
             "Question cannot be empty."
         )
 
-    chunks = load_chunks()
-
-    if not chunks:
-        raise ValueError(
-            f"No chunks found for "
-            f"{MEETING_ID}."
+    retrieval_output = (
+        build_hybrid_retrieval(
+            question,
+            meeting_id,
         )
-
-    model = SentenceTransformer(
-        MODEL_NAME
     )
-
-    collection = load_chroma()
-
-    bm25 = build_bm25_index(
-        chunks
-    )
-
-    start = time.perf_counter()
-
-    semantic_results = semantic_search(
-        collection,
-        model,
-        question,
-    )
-
-    bm25_results = bm25_search(
-        bm25,
-        chunks,
-        question,
-    )
-
-    hybrid_results = build_hybrid_results(
-        semantic_results,
-        bm25_results,
-    )
-
-    end = time.perf_counter()
-
-    latency_ms = (
-        end - start
-    ) * 1000
 
     display_results(
         question,
-        hybrid_results,
-        latency_ms,
+        retrieval_output,
     )
 
 

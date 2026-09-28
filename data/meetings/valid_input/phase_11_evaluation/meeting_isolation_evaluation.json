@@ -1,0 +1,26 @@
+{
+  "phase": 11,
+  "evaluation": "Meeting Isolation + Data Integrity",
+  "timestamp": "2026-09-28T15:51:59.042663",
+  "total_meetings": 1,
+  "total_checks": 6,
+  "passed_checks": 6,
+  "failed_checks": 0,
+  "pass_rate": 1.0,
+  "overall_passed": true,
+  "meetings": [
+    {
+      "meeting_id": "M-001",
+      "checks": {
+        "meeting_id_format": true,
+        "meeting_directory": true,
+        "audio_exists": true,
+        "transcript_exists": true,
+        "chunk_metadata_isolation": true,
+        "conversation_isolation": true
+      },
+      "passed": true,
+      "chunk_count": 25
+    }
+  ]
+}

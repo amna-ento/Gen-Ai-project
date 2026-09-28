@@ -1,9 +1,14 @@
 from typing import Any
 
+from src.storage.meeting_paths import validate_meeting_id
+
 
 def build_context(
     reranked_results: list[dict[str, Any]],
+    meeting_id: str,
 ) -> str:
+
+    meeting_id = validate_meeting_id(meeting_id)
 
     if not reranked_results:
         return ""
@@ -29,10 +34,25 @@ def build_context(
             {},
         )
 
-        meeting_id = metadata.get(
-            "meeting_id",
-            "UNKNOWN",
+        result_meeting_id = metadata.get(
+            "meeting_id"
         )
+
+        if result_meeting_id != meeting_id:
+            raise ValueError(
+                "Meeting isolation violation while "
+                "building context: "
+                f"expected {meeting_id}, "
+                f"found {result_meeting_id}."
+            )
+
+        if not chunk_id.startswith(
+            f"{meeting_id}_CHUNK_"
+        ):
+            raise ValueError(
+                "Chunk isolation violation: "
+                f"{chunk_id} does not belong to {meeting_id}."
+            )
 
         speaker = metadata.get(
             "speaker",

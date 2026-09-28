@@ -1,18 +1,13 @@
 import time
-from sentence_transformers import (
-    MultiVectorEncoder,
-    SentenceTransformer,
-)
+
+from sentence_transformers import MultiVectorEncoder
 
 from src.retrieval.hybrid_retrieval import (
-    build_bm25_index,
-    build_hybrid_results,
-    bm25_search,
-    load_chunks,
-    load_chroma,
-    semantic_search,
-    MEETING_ID,
-    MODEL_NAME,
+    build_hybrid_retrieval,
+)
+
+from src.storage.meeting_paths import (
+    validate_meeting_id,
 )
 
 from src.generation.context_builder import (
@@ -23,7 +18,6 @@ from src.generation.context_builder import (
 
 COLBERT_MODEL_NAME = "colbert-ir/colbertv2.0"
 
-HYBRID_TOP_K = 10
 RERANK_TOP_K = 5
 
 
@@ -44,53 +38,31 @@ def load_colbert_model():
     return model
 
 
-def build_hybrid_retrieval(
-    question,
-):
-    chunks = load_chunks()
-
-    if not chunks:
-        raise ValueError(
-            f"No chunks found for {MEETING_ID}."
-        )
-
-    model = SentenceTransformer(
-        MODEL_NAME
-    )
-
-    collection = load_chroma()
-
-    bm25 = build_bm25_index(
-        chunks
-    )
-
-    semantic_results = semantic_search(
-        collection,
-        model,
-        question,
-    )
-
-    bm25_results = bm25_search(
-        bm25,
-        chunks,
-        question,
-    )
-
-    hybrid_results = build_hybrid_results(
-        semantic_results,
-        bm25_results,
-    )
-
-    return hybrid_results
-
-
 def rerank_with_colbert(
     model,
     question,
     hybrid_results,
+    meeting_id,
 ):
+    meeting_id = validate_meeting_id(
+        meeting_id
+    )
+
     if not hybrid_results:
         return [], 0.0
+
+    for result in hybrid_results:
+        result_meeting_id = result[
+            "metadata"
+        ].get("meeting_id")
+
+        if result_meeting_id != meeting_id:
+            raise ValueError(
+                "Meeting isolation violation "
+                "before ColBERT reranking: "
+                f"expected {meeting_id}, "
+                f"found {result_meeting_id}."
+            )
 
     documents = [
         result["text"]
@@ -138,9 +110,8 @@ def rerank_with_colbert(
         )
 
     reranked_results.sort(
-        key=lambda result: result[
-            "colbert_score"
-        ],
+        key=lambda result:
+        result["colbert_score"],
         reverse=True,
     )
 
@@ -150,6 +121,19 @@ def rerank_with_colbert(
         ]
     )
 
+    for result in reranked_results:
+        result_meeting_id = result[
+            "metadata"
+        ].get("meeting_id")
+
+        if result_meeting_id != meeting_id:
+            raise ValueError(
+                "Meeting isolation violation "
+                "after ColBERT reranking: "
+                f"expected {meeting_id}, "
+                f"found {result_meeting_id}."
+            )
+
     return (
         reranked_results,
         elapsed_ms,
@@ -157,6 +141,7 @@ def rerank_with_colbert(
 
 
 def display_results(
+    meeting_id,
     question,
     hybrid_results,
     reranked_results,
@@ -167,7 +152,7 @@ def display_results(
     print("=" * 100)
 
     print(
-        f"Meeting: {MEETING_ID}"
+        f"Meeting: {meeting_id}"
     )
 
     print(
@@ -211,8 +196,16 @@ def display_results(
 
 
 def main():
+    meeting_id = input(
+        "\nEnter meeting ID: "
+    ).strip()
+
+    meeting_id = validate_meeting_id(
+        meeting_id
+    )
+
     question = input(
-        "\nEnter your question: "
+        "Enter your question: "
     ).strip()
 
     if not question:
@@ -224,11 +217,16 @@ def main():
         "\nBuilding Hybrid Top-10..."
     )
 
-    hybrid_results = (
+    retrieval_output = (
         build_hybrid_retrieval(
-            question
+            question,
+            meeting_id,
         )
     )
+
+    hybrid_results = retrieval_output[
+        "results"
+    ]
 
     if not hybrid_results:
         print(
@@ -251,6 +249,7 @@ def main():
         colbert_model,
         question,
         hybrid_results,
+        meeting_id,
     )
 
     if not reranked_results:
@@ -276,6 +275,7 @@ def main():
     )
 
     display_results(
+        meeting_id,
         question,
         hybrid_results,
         reranked_results,

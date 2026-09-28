@@ -11,11 +11,17 @@ from src.reranking.colbert_reranker import (
     rerank_with_colbert,
 )
 
-from src.generation.context_builder import build_context
+from src.generation.context_builder import (
+    build_context,
+)
 
 from src.generation.citation_validator import (
     validate_citations,
     display_citation_validation,
+)
+
+from src.storage.meeting_paths import (
+    validate_meeting_id,
 )
 
 
@@ -26,8 +32,6 @@ GROQ_MODEL_NAME = "openai/gpt-oss-20b"
 OLLAMA_MODEL_NAME = "qwen3:8b"
 OLLAMA_HOST = "http://localhost:11434"
 
-MEETING_ID = "M-001"
-
 ABSTENTION_MESSAGE = (
     "I could not find enough information in the meeting context to answer this question."
 )
@@ -36,8 +40,13 @@ ABSTENTION_MESSAGE = (
 def build_prompt(
     question: str,
     context: str,
+    meeting_id: str,
     conversation_history: str = "",
 ) -> str:
+
+    meeting_id = validate_meeting_id(
+        meeting_id
+    )
 
     history_section = ""
 
@@ -61,6 +70,8 @@ All factual claims in the answer must be supported by the CURRENT MEETING CONTEX
     prompt = f"""
 You are a meeting question-answering assistant.
 
+You are answering questions only about meeting {meeting_id}.
+
 Answer the user's question using ONLY the CURRENT MEETING CONTEXT.
 
 {history_section}
@@ -75,7 +86,7 @@ CURRENT USER QUESTION:
 
 RULES:
 
-1. Answer only from the current meeting context.
+1. Answer only from meeting {meeting_id}.
 
 2. Do not use outside knowledge.
 
@@ -85,23 +96,27 @@ RULES:
 
 4. Keep the answer concise and factual.
 
-5. Every factual claim should be supported by the meeting context.
+5. Every factual claim should be supported by the current meeting context.
 
 6. Use citations in this exact format:
 
-[Source: M-001_CHUNK_001]
+[Source: {meeting_id}_CHUNK_001]
 
-7. Only cite chunk IDs that actually appear in the CURRENT MEETING CONTEXT.
+7. Only cite chunk IDs belonging to meeting {meeting_id}.
 
-8. Never invent a citation.
+8. Only cite chunk IDs that actually appear in the CURRENT MEETING CONTEXT.
 
-9. Do not cite information from the previous conversation.
+9. Never invent a citation.
 
-10. Previous conversation may only help resolve references in the current question.
+10. Never cite another meeting.
 
-11. If the question is a follow-up question, answer the follow-up directly.
+11. Do not cite information from the previous conversation.
 
-12. Do not repeat the entire previous answer unless necessary.
+12. Previous conversation may only help resolve references in the current question.
+
+13. If the question is a follow-up question, answer the follow-up directly.
+
+14. Do not repeat the entire previous answer unless necessary.
 
 Return only the final answer.
 """
@@ -111,7 +126,9 @@ Return only the final answer.
 
 def load_groq() -> Groq:
 
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = os.getenv(
+        "GROQ_API_KEY"
+    )
 
     if not api_key:
         raise ValueError(
@@ -126,16 +143,18 @@ def load_groq() -> Groq:
 def generate_with_groq(
     question: str,
     context: str,
+    meeting_id: str,
     conversation_history: str = "",
 ) -> str:
-
-    client = load_groq()
 
     prompt = build_prompt(
         question=question,
         context=context,
+        meeting_id=meeting_id,
         conversation_history=conversation_history,
     )
+
+    client = load_groq()
 
     response = client.chat.completions.create(
         model=GROQ_MODEL_NAME,
@@ -182,16 +201,18 @@ def load_ollama() -> Client:
 def generate_with_ollama(
     question: str,
     context: str,
+    meeting_id: str,
     conversation_history: str = "",
 ) -> str:
-
-    client = load_ollama()
 
     prompt = build_prompt(
         question=question,
         context=context,
+        meeting_id=meeting_id,
         conversation_history=conversation_history,
     )
+
+    client = load_ollama()
 
     response = client.chat(
         model=OLLAMA_MODEL_NAME,
@@ -234,8 +255,13 @@ def generate_with_ollama(
 def generate_answer(
     question: str,
     context: str,
+    meeting_id: str,
     conversation_history: str = "",
 ) -> dict:
+
+    meeting_id = validate_meeting_id(
+        meeting_id
+    )
 
     start_time = time.time()
 
@@ -246,6 +272,7 @@ def generate_answer(
         answer = generate_with_groq(
             question=question,
             context=context,
+            meeting_id=meeting_id,
             conversation_history=conversation_history,
         )
 
@@ -273,6 +300,7 @@ def generate_answer(
         answer = generate_with_ollama(
             question=question,
             context=context,
+            meeting_id=meeting_id,
             conversation_history=conversation_history,
         )
 
@@ -308,15 +336,23 @@ def main():
     )
 
     print(
-        "PHASE 9 - LLM GENERATION"
+        "PHASE 11 - GENERATION + CITATION ISOLATION"
     )
 
     print(
         "=" * 100
     )
 
+    meeting_id = input(
+        "\nEnter meeting ID: "
+    ).strip()
+
+    meeting_id = validate_meeting_id(
+        meeting_id
+    )
+
     question = input(
-        "\nEnter your question: "
+        "Enter your question: "
     ).strip()
 
     if not question:
@@ -329,11 +365,16 @@ def main():
         "\nBuilding Hybrid Top-10..."
     )
 
-    hybrid_results = (
+    retrieval_output = (
         build_hybrid_retrieval(
-            question
+            question,
+            meeting_id,
         )
     )
+
+    hybrid_results = retrieval_output[
+        "results"
+    ]
 
     if not hybrid_results:
 
@@ -364,6 +405,7 @@ def main():
         colbert_model,
         question,
         hybrid_results,
+        meeting_id,
     )
 
     if not reranked_results:
@@ -375,7 +417,8 @@ def main():
         return
 
     context = build_context(
-        reranked_results
+        reranked_results,
+        meeting_id,
     )
 
     print(
@@ -385,6 +428,7 @@ def main():
     result = generate_answer(
         question=question,
         context=context,
+        meeting_id=meeting_id,
     )
 
     answer = result[
@@ -395,6 +439,7 @@ def main():
         validate_citations(
             answer=answer,
             reranked_results=reranked_results,
+            meeting_id=meeting_id,
         )
     )
 
@@ -416,7 +461,12 @@ def main():
     )
 
     print(
-        "\nProvider:",
+        "\nMeeting ID:",
+        meeting_id,
+    )
+
+    print(
+        "Provider:",
         result["provider"],
     )
 

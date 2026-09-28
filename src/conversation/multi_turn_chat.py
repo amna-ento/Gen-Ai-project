@@ -19,8 +19,9 @@ from src.generation.llm_generator import (
     generate_answer,
 )
 
-
-MEETING_ID = "M-001"
+from src.storage.meeting_paths import (
+    validate_meeting_id,
+)
 
 
 def simple_reference_resolution(
@@ -29,9 +30,6 @@ def simple_reference_resolution(
 ) -> str:
     """
     Adds recent conversation context to follow-up questions.
-
-    This is a lightweight reference-resolution step.
-    The original user question is preserved.
     """
 
     if not conversation_history.strip():
@@ -78,6 +76,10 @@ def verify_meeting_results(
     expected_meeting_id: str,
 ) -> None:
 
+    expected_meeting_id = validate_meeting_id(
+        expected_meeting_id
+    )
+
     for result in results:
 
         metadata = result.get(
@@ -89,13 +91,12 @@ def verify_meeting_results(
             "meeting_id"
         )
 
-        if meeting_id is not None:
-            if meeting_id != expected_meeting_id:
-                raise ValueError(
-                    "Meeting isolation violation: "
-                    f"expected {expected_meeting_id}, "
-                    f"found {meeting_id}."
-                )
+        if meeting_id != expected_meeting_id:
+            raise ValueError(
+                "Meeting isolation violation: "
+                f"expected {expected_meeting_id}, "
+                f"found {meeting_id}."
+            )
 
 
 def process_turn(
@@ -105,6 +106,10 @@ def process_turn(
 ) -> dict:
 
     start_time = time.time()
+
+    meeting_id = validate_meeting_id(
+        manager.meeting_id
+    )
 
     history = manager.get_history_text()
 
@@ -117,9 +122,14 @@ def process_turn(
         "\nBuilding Hybrid Top-10..."
     )
 
-    hybrid_results = build_hybrid_retrieval(
-        retrieval_question
+    retrieval_output = build_hybrid_retrieval(
+        retrieval_question,
+        meeting_id,
     )
+
+    hybrid_results = retrieval_output[
+        "results"
+    ]
 
     if not hybrid_results:
         raise ValueError(
@@ -134,7 +144,7 @@ def process_turn(
 
     verify_meeting_results(
         hybrid_results,
-        MEETING_ID,
+        meeting_id,
     )
 
     print(
@@ -146,6 +156,7 @@ def process_turn(
             colbert_model,
             retrieval_question,
             hybrid_results,
+            meeting_id,
         )
     )
 
@@ -156,11 +167,12 @@ def process_turn(
 
     verify_meeting_results(
         reranked_results,
-        MEETING_ID,
+        meeting_id,
     )
 
     context = build_context(
-        reranked_results
+        reranked_results,
+        meeting_id,
     )
 
     print(
@@ -170,6 +182,7 @@ def process_turn(
     result = generate_answer(
         question=question,
         context=context,
+        meeting_id=meeting_id,
         conversation_history=history,
     )
 
@@ -178,6 +191,7 @@ def process_turn(
     citation_validation = validate_citations(
         answer=answer,
         reranked_results=reranked_results,
+        meeting_id=meeting_id,
     )
 
     citations = extract_citations(
@@ -190,14 +204,16 @@ def process_turn(
     )
 
     manager.add_turn(
-       question=question,
-       answer=answer,
-       citations=citations,
-       generation_provider=result["provider"],
-       generation_model=result["model"],
-       retrieval_question=retrieval_question,
+        question=question,
+        answer=answer,
+        citations=citations,
+        generation_provider=result["provider"],
+        generation_model=result["model"],
+        retrieval_question=retrieval_question,
     )
+
     return {
+        "meeting_id": meeting_id,
         "question": question,
         "retrieval_question": retrieval_question,
         "answer": answer,
@@ -241,7 +257,12 @@ def display_turn_result(
     )
 
     print(
-        "\nProvider:",
+        "\nMeeting ID:",
+        result["meeting_id"],
+    )
+
+    print(
+        "Provider:",
         result["provider"],
     )
 
@@ -303,6 +324,15 @@ def display_turn_result(
     )
 
     print(
+        "Cross-Meeting Citations:",
+        len(
+            validation[
+                "invalid_meeting_citations"
+            ]
+        ),
+    )
+
+    print(
         "=" * 100
     )
 
@@ -315,15 +345,23 @@ def main():
     )
 
     print(
-        "PHASE 10 - MULTI-TURN MEETING CHAT"
+        "PHASE 11 - MULTI-TURN MEETING ISOLATION"
     )
 
     print(
         "=" * 100
     )
 
+    meeting_id = input(
+        "\nEnter meeting ID: "
+    ).strip()
+
+    meeting_id = validate_meeting_id(
+        meeting_id
+    )
+
     print(
-        f"Meeting ID: {MEETING_ID}"
+        f"\nMeeting ID: {meeting_id}"
     )
 
     print(
@@ -331,7 +369,7 @@ def main():
     )
 
     manager = ConversationManager(
-        meeting_id=MEETING_ID
+        meeting_id=meeting_id
     )
 
     print(
