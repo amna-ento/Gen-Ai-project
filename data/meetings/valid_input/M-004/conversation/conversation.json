@@ -14,6 +14,52 @@
             "generation_provider": "Groq",
             "generation_model": "openai/gpt-oss-20b",
             "timestamp": "2026-09-28T12:06:57.110271+00:00"
+        },
+        {
+            "turn_id": 2,
+            "question": "what was the conversation about",
+            "retrieval_question": "what was the conversation about",
+            "answer": "They were catching up and discussing a planned biking trip through the south of Argentina, including travel logistics, camping plans, and how to prepare quick meals on the road. [Source: M-004_CHUNK_001] [Source: M-004_CHUNK_002]",
+            "citations": [
+                "M-004_CHUNK_001",
+                "M-004_CHUNK_002"
+            ],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T12:47:19.836087+00:00"
+        },
+        {
+            "turn_id": 3,
+            "question": "elaborate a bit",
+            "retrieval_question": "elaborate a bit",
+            "answer": "They caught up and talked about an upcoming biking trip through the south of Argentina.  Eric mentioned that he and a few friends would be traveling a week from now, planning to camp in a sparsely populated area and stop in a few cities for a bed and a hot meal.  They discussed practical meal options, such as lightweight “fossilized” packages that only need hot water to prepare, and considered the weight of the gear they would bring.  The conversation ended with a friendly wish to reconnect after the trip. [Source: M-004_CHUNK_001] [Source: M-004_CHUNK_002]",
+            "citations": [
+                "M-004_CHUNK_001",
+                "M-004_CHUNK_002"
+            ],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T12:50:45.847497+00:00"
+        },
+        {
+            "turn_id": 4,
+            "question": "what is the weather in lahore today",
+            "retrieval_question": "what is the weather in lahore today",
+            "answer": "I could not find enough information in the meeting context to answer this question.",
+            "citations": [],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T12:51:46.165592+00:00"
+        },
+        {
+            "turn_id": 5,
+            "question": "what was my recent question",
+            "retrieval_question": "what was my recent question",
+            "answer": "I could not find enough information in the meeting context to answer this question.",
+            "citations": [],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T12:52:13.189301+00:00"
         }
     ]
 }

@@ -25,6 +25,16 @@
             "generation_provider": "Groq",
             "generation_model": "openai/gpt-oss-20b",
             "timestamp": "2026-09-28T12:15:29.533999+00:00"
+        },
+        {
+            "turn_id": 3,
+            "question": "what was the discussion about led prototype",
+            "retrieval_question": "what was the discussion about led prototype",
+            "answer": "I could not find enough information in the meeting context to answer this question.",
+            "citations": [],
+            "generation_provider": "Groq",
+            "generation_model": "openai/gpt-oss-20b",
+            "timestamp": "2026-09-28T12:52:46.137808+00:00"
         }
     ]
 }
